@@ -1,10 +1,33 @@
-<h1>Recipe Name <%= @recipe.name %></h1>
+<%= render "shared/background", model: @recipe %>
 
-<h2>Ingredients</h2>
+<div class="global-container">
 
+<div class="container-ingedients">
+        <div class="dropdown-center">
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Ingredients
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ingredients List</a></li>
+          </ul>
+        </div>
 
-<h2>Recipe</h2>
-<p><%= @recipe.description %></p>
+        <div class="dropdown-center">
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Recipe
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Recipe description</a></li>
+          </ul>
+        </div>
 
-<h2>Links</h2>
-<p><%= @recipe.link %></p>
+        <div class="dropdown-center">
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Links
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Link youtube</a></li>
+          </ul>
+        </div>
+</div>
+</div>
