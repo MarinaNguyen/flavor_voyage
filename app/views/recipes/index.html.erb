@@ -1,0 +1,13 @@
+<h1>Country recipes</h1>
+
+<p>Sort by</p>
+
+<% @recipes.each do |recipe| %>
+  <ul>
+    <li>
+      <%= recipe.name %>
+      <%= recipe.time %>
+      <%= recipe.address %>
+    </li>
+  </ul>
+<% end %>

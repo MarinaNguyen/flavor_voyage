@@ -1,0 +1,12 @@
+<h1>Country Restaurants</h1>
+
+<p>Sort by</p>
+
+<% @restaurants.each do |restaurant| %>
+  <ul>
+    <li>
+      <%= restaurant.name %>
+      <%= restaurant.address %>
+    </li>
+  </ul>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Dashboard</h1>
+
+<h3>Information</h3>
+<p><%= @user.email %></p>
+
+<h3>Favorite Recipes</h3>
+<% @favorite_recipes.each do |favorite_recipes| %>
+  <ul>
+    <li>
+      <%= favorite_recipes.recipe_name %>
+    </li>
+  </ul>
+<% end %>

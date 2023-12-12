@@ -1,0 +1,22 @@
+<h2>Welcome to</h2>
+<h1>COUNTRY</h1>
+
+<h3>Recipes</h3>
+<% @recipes.each do |recipe| %>
+  <ul>
+    <li>
+      <%= recipe.name %>
+    </li>
+  </ul>
+<% end %>
+<button>See more</button>
+
+<h3>Restaurants</h3>
+<% @restaurants.each do |restaurant| %>
+  <ul>
+    <li>
+      <%= restaurant.name %>
+    </li>
+  </ul>
+<% end %>
+<button>See more</button>
