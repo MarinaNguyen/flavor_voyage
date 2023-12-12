@@ -1,12 +1,8 @@
 class IngredientsController < ApplicationController
-
-  def index
-    @ingredients = Ingredient.all
-  end
-
   def show
-    @ingredient = Ingredient.find(params[:id])
-    @recipes = Recipe.all
+    # @ingredient = Ingredient.find(params[:id])
+    # @recipes = Recipe.all
+    @recipe = Recipe.find(params[:recipe_id])
+    @ingredient = Ingredient.find(recipe_id: @recipe)
   end
-
 end
