@@ -1,19 +1,47 @@
-<h1>Recipe Name <%= @recipe.name %></h1>
-
-<h3>Ingredients</h3>
-<% @ingredients.each do |ingredient| %>
-  <ul>
-    <li><%= ingredient.name %></li>
-  </ul>
-<% end %>
+<%= render "shared/background", model: @recipe %>
 
 
-<h3>Recipe</h3>
-<p><%= @recipe.description %></p>
+<div class="global-container">
 
-<h3>Links</h3>
-<p><%= @recipe.link %></p>
+<div class="container-ingedients">
+        <div class="dropdown-center">
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Ingredients
+          </button>
+          <ul class="dropdown-menu">
+            <a class="dropdown-item" href="#">Ingredients List</a>
+              <% @ingredients.each do |ingredient| %>
+                  <li>
+                    <%= ingredient.name %>
+                  </li>
+              <% end %>
+           </ul>
+           </div>
 
-<%= link_to "Add to favorite", recipe_add_path(@recipe)  %>
+        <div class="dropdown-center">
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Recipe
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Recipe description</a></li>
+            <p><%= @recipe.description %></p>
+          </ul>
+        </div>
 
-<%= link_to "Homepage", choices_path%>
+        <div class="dropdown-center">
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Links
+          </button>
+          <ul class="dropdown-menu">
+           <li> <a class="dropdown-item" href="#">Link youtube</a></li>
+            <p><%= @recipe.link %></p>
+          </ul>
+        </div>
+    </div>
+      <%= link_to "Add to favorite", recipe_add_path(@recipe)  %>
+      <%= link_to "Homepage", choices_path%>
+</div>
+
+
+
+

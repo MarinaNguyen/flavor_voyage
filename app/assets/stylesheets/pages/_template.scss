@@ -1,0 +1,54 @@
+.global-container {
+  border-radius: 40px 40px 0 0;
+  background-color: white;
+  position: absolute;
+  top: 213px;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.container-ingedients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.cards-background{
+  height: 30vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-text {
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+
+.card-text h1 {
+  text-align: center;
+}
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-background {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .cards-background {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .cards-background {
+    grid-template-columns: 1fr;
+  }
+}
