@@ -1,6 +1,5 @@
 class FavoriteRecipesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_dashboard
 
   def index
     @favorite_recipes = current_user.favorite_recipes
@@ -8,6 +7,10 @@ class FavoriteRecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+  end
+
+  def new
+    @favorite_recipe = FavoriteRecipe.new(favorite_recipe_params)
   end
 
   def add
@@ -29,10 +32,7 @@ class FavoriteRecipesController < ApplicationController
   private
 
   def favorite_recipes_params
-    params.require(:favorite_recipe).permit(:recipe_id)
+    params.require(:favorite_recipe).permit(:recipe_id, :user_id)
   end
 
-  def set_dashboard
-    @dashboard = Dashboard.new(current_user)
-  end
 end

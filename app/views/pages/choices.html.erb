@@ -5,18 +5,18 @@
 <% @recipes.each do |recipe| %>
   <ul>
     <li>
-      <%= recipe.name %>
+      <%= link_to recipe.name, recipe_path(recipe.id) %>
     </li>
   </ul>
 <% end %>
-<button>See more</button>
+<%= link_to "See more", recipes_path %>
 
 <h3>Restaurants</h3>
 <% @restaurants.each do |restaurant| %>
   <ul>
     <li>
-      <%= restaurant.name %>
+      <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
     </li>
   </ul>
 <% end %>
-<button>See more</button>
+<%= link_to "See more", restaurants_path %>
