@@ -10,17 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_11_151043) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_12_093602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "countries", force: :cascade do |t|
-    t.string "name"
-    t.float "longitude"
-    t.float "latitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "favorite_recipes", force: :cascade do |t|
     t.string "recipe_name"
@@ -49,10 +41,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_151043) do
     t.text "description"
     t.float "longitude"
     t.float "latitude"
-    t.bigint "country_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["country_id"], name: "index_recipes_on_country_id"
+    t.string "country"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -61,10 +52,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_151043) do
     t.float "longitude"
     t.float "latitude"
     t.string "phone_number"
-    t.bigint "country_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["country_id"], name: "index_restaurants_on_country_id"
+    t.string "country"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,6 +72,4 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_151043) do
   add_foreign_key "favorite_recipes", "recipes"
   add_foreign_key "favorite_recipes", "users"
   add_foreign_key "ingredients", "recipes"
-  add_foreign_key "recipes", "countries"
-  add_foreign_key "restaurants", "countries"
 end
