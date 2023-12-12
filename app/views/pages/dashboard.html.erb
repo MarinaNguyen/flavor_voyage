@@ -10,10 +10,11 @@
 <p><%= @user.email %></p>
 
 <h3>Favorite Recipes</h3>
-<% @favorite_recipes.each do |favorite_recipes| %>
+<% @favorite_recipes.each do |favorite_recipe| %>
   <ul>
     <li>
-      <%= favorite_recipes.recipe_name %>
+      <%= favorite_recipe.recipe.name%>
+      <%= link_to "Remove", recipe_delete_path(favorite_recipe.id) %>
     </li>
   </ul>
 <% end %>

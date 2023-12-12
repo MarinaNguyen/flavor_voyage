@@ -1,5 +1,6 @@
 <%= render "shared/background", model: @recipe %>
 
+
 <div class="global-container">
 
 <div class="container-ingedients">
@@ -8,9 +9,14 @@
             Ingredients
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Ingredients List</a></li>
-          </ul>
-        </div>
+            <a class="dropdown-item" href="#">Ingredients List</a>
+              <% @ingredients.each do |ingredient| %>
+                  <li>
+                    <%= ingredient.name %>
+                  </li>
+              <% end %>
+           </ul>
+           </div>
 
         <div class="dropdown-center">
           <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -18,6 +24,7 @@
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Recipe description</a></li>
+            <p><%= @recipe.description %></p>
           </ul>
         </div>
 
@@ -26,8 +33,15 @@
             Links
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Link youtube</a></li>
+           <li> <a class="dropdown-item" href="#">Link youtube</a></li>
+            <p><%= @recipe.link %></p>
           </ul>
         </div>
+    </div>
+      <%= link_to "Add to favorite", recipe_add_path(@recipe)  %>
+      <%= link_to "Homepage", choices_path%>
 </div>
-</div>
+
+
+
+
