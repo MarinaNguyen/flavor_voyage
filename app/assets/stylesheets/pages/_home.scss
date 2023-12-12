@@ -36,7 +36,6 @@
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
-  font-family: CircularStd,sans-serif;
   font-size: 1rem;
   height: auto;
   justify-content: center;
@@ -51,17 +50,10 @@
   touch-action: manipulation;
   vertical-align: top;
   white-space: nowrap;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .home-button:active,
 .home-button:focus {
   outline: none;
-}
-
-.home-button:hover {
-  background-position: -20px -20px;
-}
-
-.home-button:focus:not(:active) {
-  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }

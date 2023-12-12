@@ -24,7 +24,7 @@ class FavoriteRecipesController < ApplicationController
   end
 
   def destroy
-    @favorite_recipe = FavoriteRecipe.find(params[:id])
+    @favorite_recipe = FavoriteRecipe.find(params[:recipe_id])
     @favorite_recipe.destroy
     redirect_to dashboard_path
   end
