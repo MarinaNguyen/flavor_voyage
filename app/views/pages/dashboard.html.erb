@@ -8,6 +8,7 @@
   <ul>
     <li>
       <%= favorite_recipe.recipe.name%>
+      <%= link_to "Remove", recipe_delete_path(favorite_recipe.id) %>
     </li>
   </ul>
 <% end %>
