@@ -1,11 +1,14 @@
-  <%= render "shared/background", model: @restaurant %>
+<%= render "shared/background", model: @restaurant %>
 
 
-<p>Price</p>
-<p>Services</p>
+<div class="global-container">
+    <div class="container-radius">
+        <p>Price</p>
+        <p>Services</p>
 
-<p><%= @restaurant.address %></p>
+        <p><%= @restaurant.address %></p>
 
-<p>Itinary</p>
-
-<%= link_to "Homepage", choices_path%>
+        <p>Itinary</p>
+    </div>
+        <%= link_to "Homepage", choices_path%>
+</div>
