@@ -1,8 +1,16 @@
 <div class="container home-content">
   <h1>Flavor Voyage</h1>
 
-  <div class="home-btn-access">
-    <button class="home-button mb-3">Choose a country</button>
+  <div class="home-btn-access" data-controller="country-form">
+    <button class="home-button mb-3" data-action="click->country-form#fire">Choose a country</button>
+    <div class="d-none" data-country-form-target="countryForm">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Select a country</option>
+        <option value="1">France</option>
+        <option value="2">Spain</option>
+        <option value="3">Italy</option>
+      </select>
+    </div>
     <button class="home-button">Located me</button>
   </div>
 </div>
