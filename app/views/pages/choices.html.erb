@@ -1,22 +1,42 @@
-<h2>Welcome to</h2>
-<h1>COUNTRY</h1>
+<div class="cards-background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://kitt.lewagon.com/placeholder/cities/marseille);">
+       <%= render "shared/navbar" %>
+      <div class="card-text">
+          <h2> Welcome to </h2>
+          <h1> COUNTRY </h1>
+      </div>
+    </div>
 
-<h3>Recipes</h3>
-<% @recipes.each do |recipe| %>
-  <ul>
-    <li>
-      <%= link_to recipe.name, recipe_path(recipe.id) %>
-    </li>
-  </ul>
-<% end %>
-<%= link_to "See more", recipes_path %>
+<div data-controller="choice-button">
 
-<h3>Restaurants</h3>
-<% @restaurants.each do |restaurant| %>
-  <ul>
-    <li>
-      <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
-    </li>
-  </ul>
-<% end %>
-<%= link_to "See more", restaurants_path %>
+  <div>
+    <div>
+      <p data-action="click->choice-button#clicked" data-choice-button-target="recipes-button">recipes</p>
+    </div>
+    <div>
+      <p data-action="click->choice-button#clicked" data-choice-button-target="restaurants-button">Restaurants</p>
+    </div>
+  </div>
+
+  <div data-choice-button-target="recipes">
+    <% @recipes.first(10).each do |recipe| %>
+      <ul>
+        <li>
+          <%= link_to recipe.name, recipe_path(recipe.id) %>
+        </li>
+      </ul>
+    <% end %>
+    <%= link_to "See more", recipes_path %>
+  </div>
+
+  <div class="d-none" data-choice-button-target="restaurants">
+    <% @restaurants.first(10).each do |restaurant| %>
+      <ul>
+        <li>
+          <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
+        </li>
+      </ul>
+    <% end %>
+    <%= link_to "See more", restaurants_path %>
+  </div>
+
+</div>
