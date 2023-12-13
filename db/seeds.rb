@@ -124,8 +124,10 @@ countries.each do |country|
 
     name = html_doc_2.search("h1").text.strip
     description = html_doc_2.search("#method ol").text
-    recipe = Recipe.create!(name:, description:, country: country)
+    image_url = html_doc_2.search("img")[1].values[1]
+    recipe = Recipe.create!(name:, description:, country:, image_url:)
     # puts "created recipe : #{recipe.name}"
+    # puts "image_url"
 
     html_doc_2.search('#ingredients ul').each do |li|
       li.text.strip.split("\n").each { |i| Ingredient.create!(name: i, recipe:) }

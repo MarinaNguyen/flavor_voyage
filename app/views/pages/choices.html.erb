@@ -6,37 +6,83 @@
       </div>
     </div>
 
-<div data-controller="choice-button">
+  <div class="global-container">
+    <div class="container-radius">
 
-  <div>
-    <div>
-      <p data-action="click->choice-button#clicked" data-choice-button-target="recipes-button">recipes</p>
+        <div data-controller="choice-button">
+
+          <div id="choice-buttons">
+            <div id="recipe-button">
+              <p data-action="click->choice-button#clicked" data-choice-button-target="recipesbutton">recipes</p>
+            </div>
+            <div id="restaurant-button">
+              <p data-action="click->choice-button#clicked" data-choice-button-target="restaurantsbutton">Restaurants</p>
+            </div>
+          </div>
+
+
+          <div class="cards-recipes">
+
+            <div class="cards-recipes-1">
+              <% @recipes.first(10).each do |recipe| %>
+                <div class="card-recipe1" data-choice-button-target="recipes">
+                      <div class="card-recipe">
+                        <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
+                        <div class="card-name">
+                          <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
+                        </div>
+                      </div>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="cards-recipes-2">
+              <% @recipes.last(10).each do |recipe| %>
+                <div class="card-recipe2" data-choice-button-target="recipes">
+                      <div class="card-recipe">
+                        <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
+                        <div class="card-name">
+                          <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
+                        </div>
+                      </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <%= link_to "See more", recipes_path %>
+
+
+          <div class="cards-recipes">
+            <div class="cards-recipes-2">
+              <% @restaurants.first(10).each do |restaurant| %>
+                <div class="d-none" data-choice-button-target="restaurants">
+                  <div class="card-recipe">
+                    <%#= image a definir %>
+                    <div class="card-name">
+                      <p><%= link_to restaurant.name, restaurant_path(restaurant.id) %></p>
+                    </div>
+                  </div>
+              </div>
+            <% end %>
+            </div>
+
+
+           <div class="cards-recipes-2">
+              <% @restaurants.last(10).each do |restaurant| %>
+                <div class="d-none" data-choice-button-target="restaurants">
+                  <div class="card-recipe">
+                    <%#= image a definir %>
+                    <div class="card-name">
+                      <p><%= link_to restaurant.name, restaurant_path(restaurant.id) %></p>
+                    </div>
+                  </div>
+              </div>
+            <% end %>
+            </div>
+          </div>
+            <%= link_to "See more", restaurants_path %>
+        </div>
+
     </div>
-    <div>
-      <p data-action="click->choice-button#clicked" data-choice-button-target="restaurants-button">Restaurants</p>
-    </div>
   </div>
-
-  <div data-choice-button-target="recipes">
-    <% @recipes.first(10).each do |recipe| %>
-      <ul>
-        <li>
-          <%= link_to recipe.name, recipe_path(recipe.id) %>
-        </li>
-      </ul>
-    <% end %>
-    <%= link_to "See more", recipes_path %>
-  </div>
-
-  <div class="d-none" data-choice-button-target="restaurants">
-    <% @restaurants.first(10).each do |restaurant| %>
-      <ul>
-        <li>
-          <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
-        </li>
-      </ul>
-    <% end %>
-    <%= link_to "See more", restaurants_path %>
-  </div>
-
 </div>
