@@ -1,0 +1,38 @@
+#choice-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: 90%;
+}
+
+#recipe-button {
+  width: 50%;
+}
+
+#recipe-button > p {
+  display: flex;
+  justify-content: center;
+  background-color: #04585A;
+  color: #FFFFFF;
+  border-radius: 40px 0 0 40px;
+  padding: 15px 50px 15px 50px;
+  font-weight: normal;
+  font-size: 20px;
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 6px 5px 0px;
+}
+
+#restaurant-button {
+  width: 50%;
+}
+
+#restaurant-button > p {
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: 0 40px 40px 0;
+  padding: 15px 50px 15px 50px;
+  font-weight: normal;
+  font-size: 20px;
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 6px 5px 0px;
+}

@@ -1,0 +1,36 @@
+.cards-recipes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cards-recipes-2 {
+  margin-top: 36px;
+}
+
+.card-recipe1 {
+  margin-bottom: 30px;
+}
+.card-recipe2 {
+  margin-bottom: 30px;
+}
+
+.card-image {
+  width: 145px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 40px 40px 0 0;
+}
+
+.card-name {
+  background-color: #FFFFFF;
+  padding: 4px 0 4px 0;
+  border-radius: 0 0 40px 40px;
+  text-align: center;
+  width: 145px;
+  a {
+    text-decoration: none;
+    color: #04585A;
+    font-weight: normal;
+    font-size: 12px;
+  }
+}
