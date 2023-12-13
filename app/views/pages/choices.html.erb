@@ -6,27 +6,37 @@
       </div>
     </div>
 
+<div data-controller="choice-button">
 
-<div class="global-container">
-      <div class="container-radius">
-      <h3>Recipes</h3>
-      <% @recipes.each do |recipe| %>
-        <ul>
-          <li>
-            <%= link_to recipe.name, recipe_path(recipe.id) %>
-          </li>
-        </ul>
-      <% end %>
-      <%= link_to "See more", recipes_path %>
+  <div>
+    <div>
+      <p data-action="click->choice-button#clicked" data-choice-button-target="recipes-button">recipes</p>
+    </div>
+    <div>
+      <p data-action="click->choice-button#clicked" data-choice-button-target="restaurants-button">Restaurants</p>
+    </div>
+  </div>
 
-      <h3>Restaurants</h3>
-      <% @restaurants.each do |restaurant| %>
-        <ul>
-          <li>
-            <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
-          </li>
-        </ul>
-      <% end %>
-      </div>
-            <%= link_to "See more", restaurants_path %>
+  <div data-choice-button-target="recipes">
+    <% @recipes.first(10).each do |recipe| %>
+      <ul>
+        <li>
+          <%= link_to recipe.name, recipe_path(recipe.id) %>
+        </li>
+      </ul>
+    <% end %>
+    <%= link_to "See more", recipes_path %>
+  </div>
+
+  <div class="d-none" data-choice-button-target="restaurants">
+    <% @restaurants.first(10).each do |restaurant| %>
+      <ul>
+        <li>
+          <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
+        </li>
+      </ul>
+    <% end %>
+    <%= link_to "See more", restaurants_path %>
+  </div>
+
 </div>
