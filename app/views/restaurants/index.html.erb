@@ -8,10 +8,18 @@
 </div>
 
 
-
 <div class="global-container">
     <div class="container-radius">
               <p>Sort by</p>
+
+              <%# MAPBOX MAP %>
+            <div class="map" style="width: 100%; height: 40vh;"
+                data-controller="map"
+                data-map-markers-value="<%= @markers.to_json %>"
+                data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+              <%# MAPBOX MAP %>
+
         <% @restaurants.each do |restaurant| %>
           <ul>
             <li>

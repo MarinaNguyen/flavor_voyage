@@ -9,16 +9,21 @@
 
 <div class="global-container">
     <div class="container-radius">
-          <p>Sort by</p>
-      <% @recipes.each do |recipe| %>
-        <ul>
-          <li>
-            <%= link_to recipe.name, recipe_path(recipe.id) %>
-            <%= recipe.time %>
-            <%= recipe.address %>
-          </li>
-        </ul>
-      <% end %>
+              <p> <strong>Sort by</strong> </p>
+    <div class="recipes-cards">
+          <% @recipes.each do |recipe| %>
+            <%= link_to recipe_path(recipe.id) do %>
+            <div class="card-product">
+              <%= image_tag "logo.jpg" %>
+              <div class="card-product-infos">
+                <h2><%= recipe.name %></h2>
+                <p><%= recipe.time %></p>
+                <p><%= recipe.address %></p>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+    </div>
     </div>
         <%= link_to "Homepage", choices_path%>
 </div>
