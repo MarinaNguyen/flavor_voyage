@@ -51,9 +51,14 @@
   vertical-align: top;
   white-space: nowrap;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  opacity: 0.9;
 }
 
 .home-button:active,
 .home-button:focus {
   outline: none;
+}
+
+.home-button:hover{
+  opacity: 1;
 }

@@ -2,7 +2,14 @@
   <h1>Flavor Voyage</h1>
 
   <div class="home-btn-access">
-    <button class="home-button mb-3">Choose a country</button>
+    <select class="form-select home-button mb-3" aria-label="Select a country"
+      onChange="if(this.selecteIndex!=0) self.location=this.options[this.selectedIndex].value"
+      >
+      <option selected>Select a country</option>
+      <option value="choices">France</option>
+      <option value="choices">Spain</option>
+      <option value="choice">Italy</option>
+    </select>
     <button class="home-button">Located me</button>
   </div>
 </div>
