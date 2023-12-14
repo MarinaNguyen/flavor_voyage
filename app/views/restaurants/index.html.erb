@@ -1,38 +1,32 @@
 <div class="cards-background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://kitt.lewagon.com/placeholder/cities/marseille);">
-       <%= render "shared/navbar" %>
-      <div class="card-text">
+  <div class="global-container">
+      <div class="container-radius">
+                <p>Sort by</p>
 
-          <h1> Country Restaurants </h1>
+                <%# MAPBOX MAP %>
+              <div class="map" style="width: 100%; height: 40vh;"
+                  data-controller="map"
+                  data-map-markers-value="<%= @markers.to_json %>"
+                  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
+                <%# MAPBOX MAP %>
 
+          <% @restaurants.each do |restaurant| %>
+            <ul>
+              <li>
+                <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
+                <%= restaurant.address %>
+              </li>
+            </ul>
+          <% end %>
       </div>
-</div>
+          <%= link_to "Homepage", choices_path%>
+  </div>
+  <%= render "shared/navbar" %>
+  <div class="card-text">
 
+    <h1> Country Restaurants </h1>
 
-<div class="global-container">
-    <div class="container-radius">
-              <p>Sort by</p>
+  </div>
 
-              <%# MAPBOX MAP %>
-            <div class="map" style="width: 100%; height: 40vh;"
-                data-controller="map"
-                data-map-markers-value="<%= @markers.to_json %>"
-                data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-            </div>
-              <%# MAPBOX MAP %>
-
-            <div class="restaurants-cards">
-                      <% @restaurants.each do |restaurant| %>
-                        <%= link_to restaurant_path(restaurant.id) do %>
-                        <div class="card-product-restaurant">
-                          <%= image_tag "logo.jpg" %>
-                          <div class="card-product-infos-restaurant">
-                            <h2><%= restaurant.name %></h2>
-                            <p><strong><%= restaurant.address %></strong></p>
-                          </div>
-                        </div>
-                        <% end %>
-                      <% end %>
-                    <%= link_to "Homepage", choices_path%>
-            </div>
-    </div>
 </div>
