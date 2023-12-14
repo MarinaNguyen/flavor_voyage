@@ -1,15 +1,7 @@
 <div class="cards-background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://kitt.lewagon.com/placeholder/cities/marseille);">
-       <%= render "shared/navbar" %>
-      <div class="card-text">
-
-          <h1>Country Recipes</h1>
-      </div>
-    </div>
-
-
-<div class="global-container">
+  <div class="global-container">
     <div class="container-radius">
-              <p> <strong>Sort by</strong> </p>
+      <p> <strong>Sort by</strong> </p>
     <div class="recipes-cards">
           <% @recipes.each do |recipe| %>
             <%= link_to recipe_path(recipe.id) do %>
@@ -25,5 +17,11 @@
           <% end %>
     </div>
     </div>
-        <%= link_to "Homepage", choices_path%>
+    <%= link_to "Homepage", choices_path%>
+  </div>
+  <%= render "shared/navbar" %>
+  <div class="card-text">
+
+    <h1>Country Recipes</h1>
+  </div>
 </div>
