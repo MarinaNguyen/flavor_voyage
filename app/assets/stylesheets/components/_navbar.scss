@@ -4,6 +4,7 @@
   position: sticky;
   top : 0;
   transition: 0.5s background-color ease;
+  z-index: 99;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,7 +18,7 @@
 .navbar-lewagon-white {
   background-color: #F2F2F2F2;
   position: sticky;
-  top : 0;
+  top: 0;
 }
 
 .navbar-lewagon .navbar-collapse i{

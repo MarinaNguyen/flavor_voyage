@@ -7,6 +7,22 @@
   min-height: 100vh;
 }
 
+
+.sticky-container-updated {
+  position: sticky;
+  top: 213;
+}
+
+.scrolling {
+  overflow-y: scroll;
+  height: 80vh;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+}
+
 .container-radius {
   display: flex;
   flex-direction: column;
