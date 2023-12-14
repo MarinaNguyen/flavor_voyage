@@ -1,0 +1,48 @@
+.card-product-restaurant {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  max-width: 95vw;
+  margin-top: 6px;
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-product-restaurant:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-product-restaurant .card-product-infos-restaurant {
+  padding: 20px;
+}
+
+.card-product-restaurant img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+.card-product-restaurant h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product-restaurant p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #777;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.restaurants-cards a {
+  text-decoration: none;
+  color: #02595A;
+}
+
+.address-resto{
+  color: #02595A;
+}

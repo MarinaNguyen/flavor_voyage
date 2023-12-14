@@ -20,14 +20,19 @@
             </div>
               <%# MAPBOX MAP %>
 
-        <% @restaurants.each do |restaurant| %>
-          <ul>
-            <li>
-              <%= restaurant.name %>
-              <%= restaurant.address %>
-            </li>
-          </ul>
-        <% end %>
+            <div class="restaurants-cards">
+                      <% @restaurants.each do |restaurant| %>
+                        <%= link_to restaurant_path(restaurant.id) do %>
+                        <div class="card-product-restaurant">
+                          <%= image_tag "logo.jpg" %>
+                          <div class="card-product-infos-restaurant">
+                            <h2><%= restaurant.name %></h2>
+                            <p><strong><%= restaurant.address %></strong></p>
+                          </div>
+                        </div>
+                        <% end %>
+                      <% end %>
+                    <%= link_to "Homepage", choices_path%>
+            </div>
     </div>
-        <%= link_to "Homepage", choices_path%>
 </div>
