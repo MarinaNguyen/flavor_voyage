@@ -56,6 +56,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_14_130648) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "country"
+    t.string "image_url"
   end
 
   create_table "users", force: :cascade do |t|
