@@ -1,6 +1,17 @@
+.title-choice {
+  text-align: center;
+}
+
+// Recipes
 .cards-recipes {
   display: flex;
   justify-content: space-evenly;
+}
+
+.card-recipe {
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 7px 10px 7px rgba(0, 0, 0, 0.1);
 }
 
 .cards-recipes-2 {
@@ -14,13 +25,40 @@
   margin-bottom: 30px;
 }
 
+// Restaurants
+.cards-restaurants {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-restaurant {
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 7px 10px 7px rgba(0, 0, 0, 0.1);
+}
+
+
+.cards-restaurants-2 {
+  margin-top: 36px;
+}
+
+.card-restaurant1 {
+  margin-bottom: 30px;
+}
+.card-restaurant2 {
+  margin-bottom: 30px;
+}
+
+// Image
 .card-image {
   width: 145px;
   height: 145px;
   object-fit: cover;
   border-radius: 40px 40px 0 0;
+  height: auto;
 }
 
+// Infos
 .card-name {
   background-color: #FFFFFF;
   padding: 4px 0 4px 0;
@@ -29,8 +67,8 @@
   width: 145px;
   a {
     text-decoration: none;
-    color: #04585A;
-    font-weight: normal;
+    color: #02595A;
+    font-weight: 700;
     font-size: 12px;
   }
 }
