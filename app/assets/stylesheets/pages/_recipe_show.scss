@@ -1,0 +1,22 @@
+.recipe-show-display {
+  width: 100%;
+  padding: 20px 30px
+}
+
+.ul-recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 5px;
+}
+
+.recipe-show {
+  // display: flex;
+  // justify-content: center;
+  background-color: #02595A;
+  color: #FFFFFF;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 40px;
+  width: 100%;
+}

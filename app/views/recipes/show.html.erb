@@ -1,11 +1,11 @@
 <div class="global-container">
 
 <div class="container-radius">
-        <div class="dropdown-center">
-          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown-center recipe-show-display">
+          <button type="button" class="dropdown-toggle recipe-show" data-bs-toggle="dropdown" aria-expanded="false">
             Ingredients
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu ul-recipe">
             <a class="dropdown-item" href="#">Ingredients List</a>
               <% @ingredients.each do |ingredient| %>
                   <li>
@@ -15,18 +15,18 @@
            </ul>
            </div>
 
-        <div class="dropdown-center">
-          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown-center recipe-show-display">
+          <button type="button" class="dropdown-toggle recipe-show" data-bs-toggle="dropdown" aria-expanded="false">
             Recipe
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu ul-recipe">
             <li><a class="dropdown-item" href="#">Recipe description</a></li>
             <p><%= @recipe.description %></p>
           </ul>
         </div>
 
-        <div class="dropdown-center">
-          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown-center recipe-show-display">
+          <button type="button" class="dropdown-toggle recipe-show" data-bs-toggle="dropdown" aria-expanded="false">
             Links
           </button>
           <ul class="dropdown-menu">
