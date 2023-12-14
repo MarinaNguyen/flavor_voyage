@@ -6,11 +6,9 @@
           <% @recipes.each do |recipe| %>
             <%= link_to recipe_path(recipe.id) do %>
             <div class="card-product">
-              <%= image_tag "logo.jpg" %>
+              <%= image_tag recipe.image_url %>
               <div class="card-product-infos">
                 <h2><%= recipe.name %></h2>
-                <p><%= recipe.time %></p>
-                <p><%= recipe.address %></p>
               </div>
             </div>
             <% end %>
