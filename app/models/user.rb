@@ -4,5 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  COUNTRIES = ["France", "Spain", "Italy"]
+
   has_many :favorite_recipes
 end
