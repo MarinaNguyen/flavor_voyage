@@ -3,6 +3,7 @@
   background: transparent;
   position: sticky;
   top : 0;
+  transition: 0.5s background-color ease;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,6 +12,12 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-lewagon-white {
+  background-color: #F2F2F2F2;
+  position: sticky;
+  top : 0;
 }
 
 .navbar-lewagon .navbar-collapse i{

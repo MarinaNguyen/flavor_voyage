@@ -1,23 +1,22 @@
 <div class="cards-background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://kitt.lewagon.com/placeholder/cities/marseille);">
-       <%= render "shared/navbar" %>
-      <div class="card-text">
-          <h1>Dashboard</h1>
-      </div>
-    </div>
+  <div class="global-container">
+        <div class="container-radius">
+        <h3>Information</h3>
+        <p><%= @user.email %></p>
 
-<div class="global-container">
-      <div class="container-radius">
-      <h3>Information</h3>
-      <p><%= @user.email %></p>
-
-      <h3>Favorite Recipes</h3>
-      <% @favorite_recipes.each do |favorite_recipe| %>
-        <ul>
-          <li>
-            <%= favorite_recipe.recipe.name%>
-            <%= link_to "Remove", recipe_delete_path(favorite_recipe.id) %>
-          </li>
-        </ul>
-      <% end %>
-      </div>
+        <h3>Favorite Recipes</h3>
+        <% @favorite_recipes.each do |favorite_recipe| %>
+          <ul>
+            <li>
+              <%= favorite_recipe.recipe.name%>
+              <%= link_to "Remove", recipe_delete_path(favorite_recipe.id) %>
+            </li>
+          </ul>
+        <% end %>
+        </div>
+  </div>
+  <%= render "shared/navbar" %>
+  <div class="card-text">
+    <h1>Dashboard</h1>
+  </div>
 </div>
