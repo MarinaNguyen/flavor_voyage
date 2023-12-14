@@ -10,6 +10,15 @@
       <option value="choices">Spain</option>
       <option value="choice">Italy</option>
     </select>
-    <button class="home-button">Located me</button>
+      <% if user_signed_in? %>
+        <%= link_to choices_path do  %>
+          <button class="home-button">Locate me</button>
+        <% end %>
+        <% else %>
+        <%= link_to new_user_session_path do  %>
+          <button class="home-button">Locate me</button>
+        <% end %>
+      <% end %>
+
   </div>
 </div>
