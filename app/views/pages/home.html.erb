@@ -2,9 +2,11 @@
   <h1>Flavor Voyage</h1>
 
   <div class="home-btn-access">
+    <div class="home-button mb-3">
     <%= form_with url: choices_path, data: { country_form_target: "form", controller: "country-form" }, method: :get do |f| %>
-      <%= f.select :country, ["France", "Spain", "Italy"] %>
+      <%= f.select :country, ["Choose a country", "France", "Spain", "Italy"] %>
     <% end %>
+    </div>
       <% if user_signed_in? %>
         <%= link_to choices_path do  %>
           <button class="home-button">Locate me</button>
