@@ -2,24 +2,35 @@
   <div class="global-container">
     <div class="container-radius">
       <p> <strong>Sort by</strong> </p>
-    <div class="recipes-cards">
-          <% @recipes.each do |recipe| %>
+      <div class="recipes-cards">
+        <% @recipes.each do |recipe| %>
+          <% if recipe.id.odd? %>
             <%= link_to recipe_path(recipe.id) do %>
-            <div class="card-product">
-              <%= image_tag recipe.image_url %>
-              <div class="card-product-infos">
-                <h2><%= recipe.name %></h2>
+              <div class="card-product-white">
+                <%= image_tag recipe.image_url %>
+                <div class="card-product-infos-white">
+                  <h2><%= recipe.name %></h2>
+                </div>
               </div>
-            </div>
             <% end %>
-          <% end %>
-    </div>
+            <% else %>
+              <%= link_to recipe_path(recipe.id) do %>
+                <div class="card-product-green">
+                  <%= image_tag recipe.image_url %>
+                  <div class="card-product-infos-green">
+                    <h2><%= recipe.name %></h2>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+        <% end %>
+      </div>
     </div>
     <%= link_to "Homepage", choices_path%>
   </div>
+
   <%= render "shared/navbar" %>
   <div class="card-text">
-
     <h1>Country Recipes</h1>
   </div>
 </div>
