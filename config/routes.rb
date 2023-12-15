@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     get 'add', to: 'favorite_recipes#add'
     get 'delete', to: 'favorite_recipes#destroy'
   end
-  get 'choices', to: 'pages#choices'
   get 'dashboard', to: 'pages#dashboard'
+  get "choices", to: "pages#choices"
 end
 # Defines the root path route ("/")
 # root "posts#index"

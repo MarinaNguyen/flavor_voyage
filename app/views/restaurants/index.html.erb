@@ -1,12 +1,12 @@
 <div class="cards-background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://kitt.lewagon.com/placeholder/cities/marseille);">
   <%= render "shared/navbar" %>
   <div class="card-text">
-    <h1> Country Restaurants </h1>
+    <h1>Restaurants </h1>
   </div>
 
   <div class="global-container" >
     <div class="container-radius" data-controller="sticky-container" data-action="scroll@window->sticky-container#updateSticky"> <!--  data-sticky-container-target="sticky" -->
-      <p>Sort by</p>
+      <p><strong>Sort by</strong></p>
       <%# MAPBOX MAP %>
       <div class="map" style="width: 100%; height: 40vh;"
         data-controller="map"
@@ -18,16 +18,6 @@
         <% @restaurants.each do |restaurant| %>
           <% if restaurant.id.odd? %>
             <%= link_to restaurant_path(restaurant.id) do %>
-              <div class="card-product-restaurant-white">
-                <%= image_tag "logo.jpg" %>
-                <div class="card-product-infos-restaurant-white">
-                  <h2><%= restaurant.name.upcase %></h2>
-                  <p><%= restaurant.address %></p>
-                </div>
-              </div>
-            <% end %>
-            <% else %>
-              <%= link_to restaurant_path(restaurant.id) do %>
               <div class="card-product-restaurant-green">
                 <%= image_tag "logo.jpg" %>
                 <div class="card-product-infos-restaurant-green">
@@ -36,9 +26,23 @@
                 </div>
               </div>
             <% end %>
+            <% else %>
+              <%= link_to restaurant_path(restaurant.id) do %>
+              <div class="card-product-restaurant-white">
+                <%= image_tag "logo.jpg" %>
+                <div class="card-product-infos-restaurant-white">
+                  <h2><%= restaurant.name.upcase %></h2>
+                  <p><%= restaurant.address %></p>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-        <%= link_to "Homepage", choices_path%>
+      </div>
+      <div class="button-sample-home">
+        <%= form_with url: choices_path, data: { country_form_target: "form", controller: "country-form" }, method: :get do |f| %>
+          <%= f.select :country, ["Homepage","France", "Spain", "Italy"] %>
+        <% end %>
       </div>
    </div>
   </div>
