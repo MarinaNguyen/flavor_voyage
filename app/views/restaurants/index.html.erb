@@ -30,7 +30,7 @@
             <% else %>
               <%= link_to restaurant_path(restaurant.id) do %>
               <div class="card-product-restaurant-white">
-                <%= image_tag "logo.jpg" %>
+                <%= image_tag restaurant.image_url %>
                 <div class="card-product-infos-restaurant-white">
                   <h2><%= restaurant.name.upcase %></h2>
                   <p><%= restaurant.address %></p>
