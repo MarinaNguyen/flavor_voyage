@@ -2,54 +2,52 @@
   <div class="global-container">
     <div class="container-radius">
 
-        <div data-controller="choice-button">
+      <div data-controller="choice-button">
 
-          <div id="choice-buttons">
-            <div id="recipe-button">
+        <div id="choice-buttons">
+          <div id="recipe-button">
               <p data-action="click->choice-button#clicked" data-choice-button-target="recipesbutton">Recipes</p>
-            </div>
-            <div id="restaurant-button">
+          </div>
+          <div id="restaurant-button">
               <p data-action="click->choice-button#clicked" data-choice-button-target="restaurantsbutton">Restaurants</p>
-            </div>
+          </div>
+        </div>
+
+        <div class="cards-recipes" data-choice-button-target="recipes">
+          <div class="cards-recipes-1">
+            <% @recipes.first(10).each do |recipe| %>
+              <div class="card-recipe1">
+                    <div class="card-recipe">
+                      <% if recipe.image_url != nil %>
+                      <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
+                      <% else %>
+                      <img src="https://source.unsplash.com/random/?recipe" class="card-img-top" alt="image">
+                      <% end %>
+                      <div class="card-name">
+                        <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
+                      </div>
+                    </div>
+              </div>
+            <% end %>
           </div>
 
-
-          <div class="cards-recipes" data-choice-button-target="recipes">
-
-            <div class="cards-recipes-1">
-              <% @recipes.first(10).each do |recipe| %>
-                <div class="card-recipe1">
-                      <div class="card-recipe">
-                        <% if recipe.image_url != nil %>
-                        <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
-                        <% else %>
-                        <img src="https://source.unsplash.com/random/?recipe" class="card-img-top" alt="image">
-                        <% end %>
-                        <div class="card-name">
-                          <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
-                        </div>
+          <div class="cards-recipes-2">
+            <% @recipes.last(10).each do |recipe| %>
+              <div class="card-recipe2" >
+                    <div class="card-recipe">
+                      <% if recipe.image_url != nil %>
+                      <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
+                      <% else %>
+                      <img src="https://source.unsplash.com/random/?recipe" class="card-image" alt="image">
+                      <% end %>
+                      <div class="card-name">
+                        <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
                       </div>
-                </div>
-              <% end %>
-            </div>
-
-            <div class="cards-recipes-2">
-              <% @recipes.last(10).each do |recipe| %>
-                <div class="card-recipe2" >
-                      <div class="card-recipe">
-                        <% if recipe.image_url != nil %>
-                        <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
-                        <% else %>
-                        <img src="https://source.unsplash.com/random/?recipe" class="card-image" alt="image">
-                        <% end %>
-                        <div class="card-name">
-                          <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
-                        </div>
-                      </div>
-                </div>
-              <% end %>
-            </div>
+                    </div>
+              </div>
+            <% end %>
           </div>
+        </div>
 
 
 
@@ -99,6 +97,6 @@
   <%= render "shared/navbar" %>
   <div class="card-text">
     <h2 class= "title-choice"> Welcome to </h2>
-    <h1> COUNTRY </h1>
+    <h1>COUNTRY</h1>
   </div>
 </div>

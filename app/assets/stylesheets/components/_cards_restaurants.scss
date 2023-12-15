@@ -1,8 +1,8 @@
-.card-product-restaurant {
+.card-product-restaurant-white {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   display: flex;
   align-items: center;
   max-width: 95vw;
@@ -11,29 +11,84 @@
   transition: box-shadow 0.3s ease;
 }
 
-.card-product-restaurant:hover {
+.card-product-restaurant-white:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.card-product-restaurant .card-product-infos-restaurant {
+.card-product-restaurant-white .card-product-infos-restaurant-white {
   padding: 20px;
 }
 
-.card-product-restaurant img {
+.card-product-infos-restaurant-white {
+  text-align: center;
+}
+
+.card-product-restaurant-white img {
   height: 100%;
   width: 120px;
   object-fit: cover;
+  padding: 8px;
+  border-radius: 20px;
 }
-.card-product-restaurant h2 {
+.card-product-restaurant-white h2 {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product-restaurant p {
-  font-size: 14px;
+.card-product-restaurant-white p {
+  font-size: 12px;
+  font-weight: 500;
   line-height: 1.4;
-  color: #777;
+  color: #02595A;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-restaurant-green {
+  overflow: hidden;
+  height: 120px;
+  background: #02595A;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  align-items: center;
+  max-width: 95vw;
+  margin-top: 6px;
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-product-restaurant-green:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-product-restaurant-green .card-product-infos-restaurant-green {
+  padding: 20px;
+}
+
+.card-product-infos-restaurant-green {
+  text-align: center;
+}
+
+.card-product-restaurant-green img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  padding: 8px;
+  border-radius: 20px;
+}
+.card-product-restaurant-green h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #FFFF;
+}
+
+.card-product-restaurant-green p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #FFFF;
   margin-bottom: 0;
   margin-top: 8px;
 }
@@ -41,6 +96,11 @@
 .restaurants-cards a {
   text-decoration: none;
   color: #02595A;
+}
+
+.restaurants-cards .button-p-white {
+  text-decoration: none;
+  color: white;
 }
 
 .address-resto{

@@ -5,8 +5,9 @@ class PagesController < ApplicationController
   end
 
   def choices
-    @recipes = Recipe.all
-    @restaurants = Restaurant.all
+    country = params[:country].downcase
+    @recipes = Recipe.where(country:)
+    @restaurants = Restaurant.where(country:)
   end
 
   def dashboard
