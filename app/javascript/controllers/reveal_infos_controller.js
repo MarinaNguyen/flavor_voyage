@@ -2,13 +2,22 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="reveal-infos"
 export default class extends Controller {
-  static targets = ["infos"]
-
+  static targets = ["icon1", "icon2" ,"icon3", "container1", "container2", "container3"]
   connect() {
-    console.log("helllo");
   }
 
-  displayInfos() {
-    // this.infosTarget.classList.add("d-none")
+  displayCard(event) {
+    console.log(event.target)
+    if (event.target == this.container1Target) {
+      this.icon1Target.classList.toggle("down")
+    } else if (event.target == this.container2Target) {
+      this.icon2Target.classList.toggle("down")
+    } else {
+      this.icon3Target.classList.toggle("down")
+    }
+    const element = event.target.getAttribute("data-element")
+    const elementToToggle = document.querySelector(`#${element}`)
+    elementToToggle.classList.toggle("d-none")
   }
+
 }
