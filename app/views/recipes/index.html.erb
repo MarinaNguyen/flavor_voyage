@@ -1,7 +1,7 @@
 <div class="cards-background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://kitt.lewagon.com/placeholder/cities/marseille);">
   <div class="global-container">
     <div class="container-radius">
-      <p> <strong>Sort by</strong> </p>
+      <p class="button-sample-sort"> <strong>Sort by</strong> </p>
       <div class="recipes-cards">
         <% @recipes.each do |recipe| %>
           <% if recipe.id.odd? %>
@@ -26,7 +26,7 @@
         <% end %>
       </div>
     </div>
-    <div class="button-sample">
+    <div class="button-sample-link">
       <%= link_to "Homepage", choices_path %>
     </div>
   </div>
