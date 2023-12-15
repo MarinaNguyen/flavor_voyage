@@ -26,13 +26,15 @@
         <% end %>
       </div>
     </div>
-    <div class="button-sample-link">
-      <%= link_to "Homepage", choices_path %>
+    <div class="button-sample-home">
+      <%= form_with url: choices_path, data: { country_form_target: "form", controller: "country-form" }, method: :get do |f| %>
+        <%= f.select :country, ["Homepage","France", "Spain", "Italy"] %>
+      <% end %>
     </div>
   </div>
 
   <%= render "shared/navbar" %>
   <div class="card-text">
-    <h1>Country Recipes</h1>
+    <h1>Recipes</h1>
   </div>
 </div>

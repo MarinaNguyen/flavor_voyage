@@ -1,12 +1,12 @@
 <div class="cards-background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://kitt.lewagon.com/placeholder/cities/marseille);">
   <%= render "shared/navbar" %>
   <div class="card-text">
-    <h1> Country Restaurants </h1>
+    <h1>Restaurants </h1>
   </div>
 
   <div class="global-container" >
     <div class="container-radius" data-controller="sticky-container" data-action="scroll@window->sticky-container#updateSticky"> <!--  data-sticky-container-target="sticky" -->
-      <p>Sort by</p>
+      <p><strong>Sort by</strong></p>
       <%# MAPBOX MAP %>
       <div class="map" style="width: 100%; height: 40vh;"
         data-controller="map"
@@ -39,8 +39,10 @@
           <% end %>
         <% end %>
       </div>
-      <div class="button-sample-link">
-        <%= link_to "Homepage", choices_path %>
+      <div class="button-sample-home">
+        <%= form_with url: choices_path, data: { country_form_target: "form", controller: "country-form" }, method: :get do |f| %>
+          <%= f.select :country, ["Homepage","France", "Spain", "Italy"] %>
+        <% end %>
       </div>
    </div>
   </div>

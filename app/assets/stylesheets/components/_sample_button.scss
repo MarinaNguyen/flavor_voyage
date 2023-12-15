@@ -35,3 +35,21 @@
   text-decoration: none;
   border-radius: 40px;
 }
+
+.button-sample-home {
+  display: flex;
+  justify-content: center;
+  background-color: #02595A;
+  color: #FFFFFF;
+  padding: 10px;
+  margin: 20px 100px;
+  text-decoration: none;
+  border-radius: 40px;
+}
+
+.button-sample-home select {
+  color: white;
+  font-weight: 500;
+  background-color: #02595A;
+  border: none;
+}
