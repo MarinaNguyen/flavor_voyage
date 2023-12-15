@@ -1,0 +1,48 @@
+.button-information-dash{
+  width: 88%;
+  display: flex;
+  justify-content: start;
+  background-color: #02595A;
+  color: #FFFFFF;
+  padding: 4px;
+  margin: 20px 100px;
+  text-decoration: none;
+  border-radius: 40px;
+
+  h3{
+    display: flex;
+    justify-content: center !important;
+    width: 135%;
+  }
+
+}
+
+.favorite-recipes{
+  h3{
+    color: #02595A;
+  }
+}
+
+
+.remove-fav{
+  a{
+    text-decoration: none;
+    color: #02595A;
+    font-weight: 700;
+    font-size: 12px;
+    width: 50% !important;
+  }
+}
+.card-name {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.card-recipe {
+
+  .fa-xmark {
+    color: black;
+    font-size: 16px;
+  }
+}
