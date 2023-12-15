@@ -18,9 +18,9 @@
         <% @restaurants.each do |restaurant| %>
           <% if restaurant.id.odd? %>
             <%= link_to restaurant_path(restaurant.id) do %>
-              <div class="card-product-restaurant-white">
+              <div class="card-product-restaurant-green">
                 <%= image_tag "logo.jpg" %>
-                <div class="card-product-infos-restaurant-white">
+                <div class="card-product-infos-restaurant-green">
                   <h2><%= restaurant.name.upcase %></h2>
                   <p><%= restaurant.address %></p>
                 </div>
@@ -28,9 +28,9 @@
             <% end %>
             <% else %>
               <%= link_to restaurant_path(restaurant.id) do %>
-              <div class="card-product-restaurant-green">
+              <div class="card-product-restaurant-white">
                 <%= image_tag "logo.jpg" %>
-                <div class="card-product-infos-restaurant-green">
+                <div class="card-product-infos-restaurant-white">
                   <h2><%= restaurant.name.upcase %></h2>
                   <p><%= restaurant.address %></p>
                 </div>
