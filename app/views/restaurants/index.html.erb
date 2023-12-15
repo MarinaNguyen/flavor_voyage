@@ -19,11 +19,12 @@
           <% if restaurant.id.odd? %>
             <%= link_to restaurant_path(restaurant.id) do %>
               <div class="card-product-restaurant-green">
-                <%= image_tag "logo.jpg" %>
+                <%= image_tag restaurant.image_url %>
                 <div class="card-product-infos-restaurant-green">
                   <h2><%= restaurant.name.upcase %></h2>
                   <p><%= restaurant.address %></p>
                 </div>
+
               </div>
             <% end %>
             <% else %>

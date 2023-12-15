@@ -1,22 +1,45 @@
 <div class="cards-background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://kitt.lewagon.com/placeholder/cities/marseille);">
+   <%= render "shared/navbar" %>
+            <div class="card-text">
+              <h1>Dashboard</h1>
+            </div>
   <div class="global-container">
-        <div class="container-radius">
-        <h3>Information</h3>
-        <p><%= @user.email %></p>
+    <div class="container-radius">
 
-        <h3>Favorite Recipes</h3>
-        <% @favorite_recipes.each do |favorite_recipe| %>
-          <ul>
-            <li>
-              <%= favorite_recipe.recipe.name%>
-              <%= link_to "Remove", recipe_delete_path(favorite_recipe.id) %>
-            </li>
-          </ul>
-        <% end %>
-        </div>
-  </div>
-  <%= render "shared/navbar" %>
-  <div class="card-text">
-    <h1>Dashboard</h1>
+          <div class="button-information-dash">
+              <ul>
+              <h3>Information</h3>
+              <li>Email: <%= @user.email %></li>
+              </ul>
+          </div>
+
+          <div class="favorite-recipes">
+            <h3>Favorite Recipes</h3>
+          </div>
+
+              <div class="cards-recipes-dash">
+                    <div class="cards-recipes-1">
+                                <% @favorite_recipes.each do |favorite_recipe| %>
+                                <% recipe = favorite_recipe.recipe %>
+                        <div class="card-recipe1">
+                              <div class="card-recipe">
+                                <% if recipe.image_url != nil %>
+                                <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
+                                <% else %>
+                                <img src="https://source.unsplash.com/random/?recipe" class="card-img-top" alt="image">
+                                <% end %>
+                                <div class="card-name">
+                                  <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
+                                  <%= link_to recipe_delete_path(favorite_recipe.id) do %>
+                                    <i class="fa-solid fa-xmark"></i>
+                                  <% end %>
+                                </div>
+                              </div>
+                        </div>
+                                <% end %>
+                    </div>
+              </div>
+
+    </div>
   </div>
 </div>
