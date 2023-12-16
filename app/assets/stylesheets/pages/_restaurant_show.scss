@@ -1,0 +1,41 @@
+.restaurant-p {
+  display: flex;
+  justify-content: center;
+  border-radius: 40px;
+  background-color: #02595A;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: left;
+  margin-bottom: 20px;
+  width: 375px;
+  padding: 20px 30px;
+  margin-top: 20px;
+}
+
+.restaurant-show {
+  background-color: #02595A;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 3px;
+  width: 100%;
+  text-align: left;
+  padding-top: 8px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  width: 375px;
+}
+
+.restaurant-show-button {
+  display: flex;
+  justify-content: center;
+  background-color: #02595A;
+  color: #FFFFFF;
+  padding: 10px;
+  margin: 20px 100px;
+  text-decoration: none;
+  border-radius: 40px;
+}
+
+.mapboxgl-marker .mapboxgl-marker-anchor-center {
+  transform: translate(169px, 106px) translate(-50%, -50%) translate(0px, -14px);
+}

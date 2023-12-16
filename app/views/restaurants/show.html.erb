@@ -1,8 +1,8 @@
 
 <div class="global-container">
     <div class="container-radius">
-        <p>Price</p>
-        <p>Services</p>
+        <p class="restaurant-p">Price</p>
+        <p class="restaurant-p">Services</p>
 
         <%# MAPBOX MAP %>
 
@@ -14,13 +14,13 @@
 
         <%# MAPBOX MAP %>
 
-              <div class="address-resto">
+              <div class="address-resto restaurant-show">
                       <p><%= @restaurant.address %></p>
               </div>
 
     </div>
-        <%= link_to "Homepage", choices_path%>
-        <%= link_to "Go to Restaurants", restaurants_path(@restaurant) %>
+        <%= link_to "Homepage", choices_path, class: "restaurant-show-button"%>
+        <%= link_to "Go to Restaurants", restaurants_path(@restaurant), class: "restaurant-show-button" %>
 </div>
 
 <%= render "shared/background", model: @restaurant %>

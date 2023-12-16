@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     country = params[:country].downcase
     @recipes = Recipe.where(country:)
     @restaurants = Restaurant.where(country:)
+    # @selected_country = params[:country].capitalize
   end
 
   def dashboard
