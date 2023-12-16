@@ -28,6 +28,10 @@ gem "jbuilder"
 
 gem "geocoder"
 
+gem "elasticsearch"
+
+gem "searchkick"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

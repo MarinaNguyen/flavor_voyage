@@ -18,10 +18,12 @@
             <% @recipes.first(10).each do |recipe| %>
               <div class="card-recipe1">
                     <div class="card-recipe">
+                      <%= link_to recipe_path(recipe.id) do %>
                       <% if recipe.image_url != nil %>
                       <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
                       <% else %>
                       <img src="https://source.unsplash.com/random/?recipe" class="card-img-top" alt="image">
+                      <% end %>
                       <% end %>
                       <div class="card-name">
                         <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
@@ -35,10 +37,12 @@
             <% @recipes.last(10).each do |recipe| %>
               <div class="card-recipe2" >
                     <div class="card-recipe">
+                      <%= link_to recipe_path(recipe.id) do %>
                       <% if recipe.image_url != nil %>
                       <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
                       <% else %>
                       <img src="https://source.unsplash.com/random/?recipe" class="card-image" alt="image">
+                      <% end %>
                       <% end %>
                       <div class="card-name">
                         <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
@@ -57,10 +61,12 @@
               <% @restaurants.first(10).each do |restaurant| %>
                 <div class="card-restaurant1">
                   <div class="card-restaurant">
+                    <%= link_to restaurant_path(restaurant.id) do %>
                     <% if restaurant.image_url != nil %>
                     <%= image_tag restaurant.image_url, alt: 'Restaurant Image', class: "card-image" %>
                     <% else %>
                     <img src="https://source.unsplash.com/random/?restaurant" class="card-image" alt="image">
+                    <% end %>
                     <% end %>
                     <div class="card-name">
                       <p><%= link_to restaurant.name, restaurant_path(restaurant.id) %></p>
@@ -75,10 +81,12 @@
               <% @restaurants.last(10).each do |restaurant| %>
                 <div class="card-restaurant2">
                   <div class="card-restaurant">
+                    <%= link_to restaurant_path(restaurant.id) do %>
                     <% if restaurant.image_url != nil  %>
                     <%= image_tag restaurant.image_url, alt: 'Restaurant Image', class: "card-image" %>
                     <% else %>
                     <img src="https://source.unsplash.com/random/?restaurant" class="card-image" alt="image">
+                    <% end %>
                     <% end %>
                     <div class="card-name">
                       <p><%= link_to restaurant.name, restaurant_path(restaurant.id) %></p>
@@ -97,6 +105,8 @@
   <%= render "shared/navbar" %>
   <div class="card-text">
     <h2 class= "title-choice"> Welcome to </h2>
-    <h1>COUNTRY</h1>
+
+    <%# <h1><%#= @selected_country %></h1> %>
+
   </div>
 </div>

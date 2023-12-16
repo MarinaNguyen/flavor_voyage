@@ -1,7 +1,17 @@
 <div class="cards-background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://kitt.lewagon.com/placeholder/cities/marseille);">
   <div class="global-container">
     <div class="container-radius">
-      <p class="button-sample-sort"> <strong>Sort by</strong> </p>
+      <%# <p class="button-sample-sort"> <strong>Sort by</strong> </p> %>
+      <div class="col-sm-8 my-3">
+          <%= form_with url: recipes_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Type a keyword"
+              %>
+            <%= submit_tag "Search", name: "", class: "search-color" %>
+          <% end %>
+        </div>
       <div class="recipes-cards">
         <% @recipes.each do |recipe| %>
           <% if recipe.id.odd? %>

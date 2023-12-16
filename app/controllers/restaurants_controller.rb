@@ -1,6 +1,12 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
+    if params[:query].present?
+    sql_subquery = <<~SQL
+      restaurants.name @@ :query
+    SQL
+    @restaurants = @restaurants.where(sql_subquery, query: params[:query])
+    end
     @markers = @restaurants.geocoded.map do |restaurant|
       {
         lat: restaurant.latitude,
