@@ -2,12 +2,21 @@
 <div class="global-container">
   <div class="container-radius" data-controller="restaurant-infos">
     <div class="restaurants-button">
-      <p class="restaurant-p">Price</p>
+      <div class="restaurant-prices restaurant-p">
+        <div class="restaurant-prices-p">
+          <p><strong>Price</strong></p>
+        </div>
+        <div class="price-signs">
+          <i class="fa-solid fa-euro-sign"></i>
+          <i class="fa-solid fa-euro-sign"></i>
+          <i class="fa-solid fa-euro-sign"></i>
+        </div>
+      </div>
       <div class="restaurant-p">
         <div class="restaurant-services">
-          <p data-action="click->restaurant-infos#displayInfos">Services</p>
+          <p data-action="click->restaurant-infos#displayInfos"><strong>Services</strong></p>
         </div>
-        <div class="d-none" id="services" data-restaurant-infos-target="services">
+        <div class="d-none mt-2" id="services" data-restaurant-infos-target="services">
           <p>Dine-in</p>
           <p>Take Away</p>
           <p>Delivery</p>
