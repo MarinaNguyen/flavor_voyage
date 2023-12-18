@@ -19,8 +19,9 @@
               </div>
 
     </div>
-        <%= link_to "Homepage", choices_path, class: "restaurant-show-button"%>
-        <%= link_to "Go to Restaurants", restaurants_path(@restaurant), class: "restaurant-show-button" %>
+        <a class="restaurant-show-button" href="/restaurants?country=<%= params[:country] %>">Go to Restaurants</a>
+        <a class="restaurant-show-button" href="/choices?country=<%= params[:country] %>">Menu</a>
+
 </div>
 
 <%= render "shared/background", model: @restaurant %>

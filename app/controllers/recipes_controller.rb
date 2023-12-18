@@ -1,16 +1,17 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
-      if params[:query].present?
+    @recipes_per_country = Recipe.all.where(country: params[:country]&.downcase)
+    if params[:query].present?
       sql_subquery = <<~SQL
         recipes.name @@ :query
       SQL
-      @recipes = @recipes.where(sql_subquery, query: params[:query])
-      end
+      @recipes_per_country = @recipes_per_country.all.where(sql_subquery, query: params[:query])
+    end
   end
 
   def show
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
+    params[:country] = @recipe.country.capitalize
   end
 end
