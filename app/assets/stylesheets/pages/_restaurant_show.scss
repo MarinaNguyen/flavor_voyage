@@ -54,3 +54,23 @@ b, strong {
 .mapboxgl-marker .mapboxgl-marker-anchor-center {
   transform: translate(169px, 106px) translate(-50%, -50%) translate(0px, -14px);
 }
+
+.icone-p {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+.fa-plus {
+  padding: 10px;
+  rotate: 2s;
+  -moz-transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+}
+
+.fa-plus.down {
+  -moz-transform:rotate(360deg);
+  -webkit-transform:rotate(360deg);
+  transform:rotate(360deg);
+}
