@@ -1,7 +1,6 @@
 <div class="global-container">
 
 <div class="container-radius recipe-show-display" data-controller="reveal-infos">
-
         <div  class= "recipe-show">
           <div class="icone-p" data-element="ingredients" data-action="click->reveal-infos#displayCard" data-reveal-infos-target="container1">
             <i class="fa-solid fa-plus" data-element="ingredients" data-reveal-infos-target="icon1"></i>
@@ -24,20 +23,32 @@
           <div class="d-none" id="instructions">
           <%= @recipe.description %>
           </div>
-        </div>
 
-        <div class="recipe-show">
-          <div class="icone-p" data-element="link" data-action="click->reveal-infos#displayCard" data-reveal-infos-target="container3">
-            <i class="fa-solid fa-plus" data-element="link" data-reveal-infos-target="icon3"></i>
-            <p data-element="link">Link</p>
-          </div>
-          <div class="d-none" id="link">
-           <a class="dropdown-item" href="#">Link youtube</a>
-          </div>
         </div>
-
     </div>
-      <%= link_to "Add to favorite", recipe_add_path(@recipe), class: "recipe-show-button" %>
-      <%= link_to "Homepage", choices_path, class: "recipe-show-button"%>
+
+    <div class="recipe-show">
+      <div class="icone-p" data-element="instructions" data-action="click->reveal-infos#displayCard" data-reveal-infos-target="container2">
+        <i class="fa-solid fa-plus" data-element="instructions" data-reveal-infos-target="icon2"></i>
+        <p data-element="instructions">Instructions</p>
+      </div>
+      <div class="d-none" id="instructions">
+      <%= @recipe.description %>
+      </div>
+    </div>
+
+    <div class="recipe-show">
+      <div class="icone-p" data-element="link" data-action="click->reveal-infos#displayCard" data-reveal-infos-target="container3">
+        <i class="fa-solid fa-plus" data-element="link" data-reveal-infos-target="icon3"></i>
+        <p data-element="link">Link</p>
+      </div>
+      <div class="d-none" id="link">
+        <a class="dropdown-item" href="#">Link youtube</a>
+      </div>
+    </div>
+
+  </div>
+  <%= link_to "Add to favorite", recipe_add_path(@recipe), class: "recipe-show-button" %>
+  <%= link_to "Homepage", choices_path, class: "recipe-show-button"%>
 </div>
 <%= render "shared/background", model: @recipe %>

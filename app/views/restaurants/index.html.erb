@@ -16,6 +16,7 @@
                   class: "form-control",
                   placeholder: "Type a keyword"
               %>
+            <%= hidden_field_tag 'country', params[:country] %>
             <%= submit_tag "Search", name: "", class: "search-color" %>
           <% end %>
         </div>
@@ -29,7 +30,7 @@
       </div>
       <%# MAPBOX MAP %>
       <div class="restaurants-cards" data-sticky-container-target="scrolling">
-        <% @restaurants.each do |restaurant| %>
+        <% @restaurants_per_country.each do |restaurant| %>
           <% if restaurant.id.odd? %>
             <%= link_to restaurant_path(restaurant.id) do %>
               <div class="card-product-restaurant-green">
@@ -43,9 +44,9 @@
             <% end %>
             <% else %>
               <%= link_to restaurant_path(restaurant.id) do %>
-              <div class="card-product-restaurant-white">
+              <div class="card-product-restaurant-green">
                 <%= image_tag restaurant.image_url %>
-                <div class="card-product-infos-restaurant-white">
+                <div class="card-product-infos-restaurant-green">
                   <h2><%= restaurant.name.upcase %></h2>
                   <p><%= restaurant.address %></p>
                 </div>
@@ -55,9 +56,7 @@
         <% end %>
       </div>
       <div class="button-sample-home">
-        <%= form_with url: choices_path, data: { country_form_target: "form", controller: "country-form" }, method: :get do |f| %>
-          <%= f.select :country, ["Homepage","France", "Spain", "Italy"] %>
-        <% end %>
+        <a class="dropdown-item" href="/choices?country=<%= params[:country] %>">Menu</a>
       </div>
    </div>
   </div>
