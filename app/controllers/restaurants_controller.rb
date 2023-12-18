@@ -1,19 +1,20 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    @restaurants_per_country = Restaurant.all.where(country: params[:country]&.downcase)
     if params[:query].present?
     sql_subquery = <<~SQL
       restaurants.name @@ :query
     SQL
-    @restaurants = @restaurants.where(sql_subquery, query: params[:query])
+    @restaurants_per_country = @restaurants_per_country.all.where(sql_subquery, query: params[:query])
     end
-    @markers = @restaurants.geocoded.map do |restaurant|
+    @markers = @restaurants_per_country.geocoded.map do |restaurant|
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
       }
     end
+
   end
 
   def show
@@ -24,5 +25,6 @@ class RestaurantsController < ApplicationController
       info_window_html: render_to_string(partial: "info_window", locals: { restaurant: @restaurant })
     }
     #@marker = {lat: @restaurant.latitude, lng: @restaurant.longitude}
+    params[:country] = @restaurant.country.capitalize
   end
 end
