@@ -97,7 +97,20 @@
   margin-top: 8px;
 }
 
+// search bar //
+.form-control {
+  border-radius: 40px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+
 .search-color {
   background-color: #02595A;
   color: #FFFF;
+  border-radius: 15px;
+  border: 1px;
+  margin-left: 5px;
+  padding: 7px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
