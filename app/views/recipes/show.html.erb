@@ -1,29 +1,18 @@
 <div class="global-container">
 
-<div class="container-radius recipe-show-display" data-controller="reveal-infos">
-        <div  class= "recipe-show">
-          <div class="icone-p" data-element="ingredients" data-action="click->reveal-infos#displayCard" data-reveal-infos-target="container1">
-            <i class="fa-solid fa-plus" data-element="ingredients" data-reveal-infos-target="icon1"></i>
-            <p data-element="ingredients">Ingredients</p>
-          </div>
-          <div class= "d-none" id="ingredients">
-            <% @ingredients.each do |ingredient| %>
-              <p>
-                <%= ingredient.name %>
-              </p>
-            <% end %>
-           </div>
-        </div>
-
-        <div class="recipe-show">
-          <div class="icone-p" data-element="instructions" data-action="click->reveal-infos#displayCard" data-reveal-infos-target="container2">
-            <i class="fa-solid fa-plus" data-element="instructions" data-reveal-infos-target="icon2"></i>
-            <p data-element="instructions">Instructions</p>
-          </div>
-          <div class="d-none" id="instructions">
-          <%= @recipe.description %>
-          </div>
-
+  <div class="container-radius recipe-show-display" data-controller="reveal-infos">
+  <% @country %>
+    <div  class= "recipe-show">
+      <div class="icone-p" data-element="ingredients" data-action="click->reveal-infos#displayCard" data-reveal-infos-target="container1">
+        <i class="fa-solid fa-plus" data-element="ingredients" data-reveal-infos-target="icon1"></i>
+        <p data-element="ingredients">Ingredients</p>
+      </div>
+      <div class= "d-none" id="ingredients">
+        <% @ingredients.each do |ingredient| %>
+          <p>
+            <%= ingredient.name %>
+          </p>
+        <% end %>
         </div>
     </div>
 
@@ -49,6 +38,7 @@
 
   </div>
   <%= link_to "Add to favorite", recipe_add_path(@recipe), class: "recipe-show-button" %>
-  <%= link_to "Homepage", choices_path, class: "recipe-show-button"%>
+  <a class="recipe-show-button" href="/recipes?country=<%= params[:country] %>">Go to Recipes</a>
+  <a class="recipe-show-button" href="/choices?country=<%= params[:country] %>">Menu</a>
 </div>
 <%= render "shared/background", model: @recipe %>
