@@ -1,26 +1,38 @@
 
 <div class="global-container">
-    <div class="container-radius">
-        <p class="restaurant-p">Price</p>
-        <p class="restaurant-p">Services</p>
-
-        <%# MAPBOX MAP %>
-
-            <div class="map" style="width: 100%; height: 40vh;"
-                data-controller="map2"
-                data-map2-marker-value="<%= @marker.to_json %>"
-                data-map2-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-            </div>
-
-        <%# MAPBOX MAP %>
-
-              <div class="address-resto restaurant-show">
-                      <p><%= @restaurant.address %></p>
-              </div>
-
+  <div class="container-radius" data-controller="restaurant-infos">
+    <div class="restaurants-button">
+      <p class="restaurant-p">Price</p>
+      <div class="restaurant-p">
+        <div class="restaurant-services">
+          <p data-action="click->restaurant-infos#displayInfos">Services</p>
+        </div>
+        <div class="d-none" id="services" data-restaurant-infos-target="services">
+          <p>Dine-in</p>
+          <p>Take Away</p>
+          <p>Delivery</p>
+        </div>
+      </div>
     </div>
-        <%= link_to "Homepage", choices_path, class: "restaurant-show-button"%>
-        <%= link_to "Go to Restaurants", restaurants_path(@restaurant), class: "restaurant-show-button" %>
+
+
+        <%# MAPBOX MAP %>
+
+    <div class="map" style="width: 100%; height: 40vh;"
+        data-controller="map2"
+        data-map2-marker-value="<%= @marker.to_json %>"
+        data-map2-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+        <%# MAPBOX MAP %>
+
+    <div class="address-resto restaurant-show">
+      <p><%= @restaurant.address %></p>
+    </div>
+
+  </div>
+  <%= link_to "Homepage", choices_path, class: "restaurant-show-button"%>
+  <%= link_to "Go to Restaurants", restaurants_path(@restaurant), class: "restaurant-show-button" %>
 </div>
 
 <%= render "shared/background", model: @restaurant %>
