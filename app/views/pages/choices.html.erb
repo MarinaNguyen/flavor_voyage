@@ -26,7 +26,10 @@
                       <% end %>
                       <% end %>
                       <div class="card-name">
-                        <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
+                        <p>
+                          <%= link_to recipe.name, recipe_path(recipe)%>
+                        </p>
+
                       </div>
                     </div>
               </div>
@@ -96,8 +99,8 @@
             <% end %>
             </div>
           </div>
-          <%= link_to "See more", recipes_path, data: { choice_button_target: "recipeslink" }, class: "button-sample" %>
-          <%= link_to "See more", restaurants_path, data: {choice_button_target: "restaurantslink" }, class: "d-none button-sample" %>
+           <a class="button-sample" href="/recipes?country=<%= params[:country] %>" data-choice-button-target= "recipeslink">See more</a>
+           <a class="d-none button-sample" href="/restaurants?country=<%= params[:country] %>" data-choice-button-target= "restaurantslink">See more</a>
         </div>
 
     </div>
@@ -106,7 +109,7 @@
   <div class="card-text">
     <h2 class= "title-choice"> Welcome to </h2>
 
-    <%# <h1><%#= @selected_country %></h1> %>
+    <h1><%= @selected_country %></h1>
 
   </div>
 </div>

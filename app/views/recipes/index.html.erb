@@ -9,11 +9,12 @@
                   class: "form-control",
                   placeholder: "Type a keyword"
               %>
+            <%= hidden_field_tag 'country', params[:country] %>
             <%= submit_tag "Search", name: "", class: "search-color" %>
           <% end %>
         </div>
       <div class="recipes-cards">
-        <% @recipes.each do |recipe| %>
+        <% @recipes_per_country.each do |recipe| %>
           <% if recipe.id.odd? %>
             <%= link_to recipe_path(recipe.id) do %>
               <div class="card-product-green">
@@ -37,9 +38,7 @@
       </div>
     </div>
     <div class="button-sample-home">
-      <%= form_with url: choices_path, data: { country_form_target: "form", controller: "country-form" }, method: :get do |f| %>
-        <%= f.select :country, ["Homepage","France", "Spain", "Italy"] %>
-      <% end %>
+      <a class="dropdown-item" href="/choices?country=<%= params[:country] %>">Menu</a>
     </div>
   </div>
 
