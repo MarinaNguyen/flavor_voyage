@@ -32,7 +32,6 @@
           <p>Delivery</p>
         </div>
       </div>
-
     </div>
 
 
@@ -52,9 +51,13 @@
 
     <%# reviews  %>
 
-    <div class="restaurants-reviews restaurant-p">
-      <p><strong>Reviews</strong></p>
-      <div class="reviews-cards">
+    <div class="restaurants-reviews restaurant-p" data-controller="reviews-restaurant" data-action="click->reviews-restaurant#displayReviews">
+      <div class="icone-p" data-reviews-restaurant-target="container2">
+        <i class="fa-solid fa-plus" data-reviews-restaurant-target="icon2"></i>
+        <p><strong>Reviews</strong></p>
+      </div>
+
+      <div class="reviews-cards d-none" data-reviews-restaurant-target="reviewmenu">
         <% @restaurant_reviews.each do |restaurant_review| %>
           <div class="reviews-card">
             <h4><%= restaurant_review.title %></h4>
@@ -64,12 +67,14 @@
             <% end %>
           </div>
         <% end %>
+        <div class="form-reviews">
+          <%= simple_form_for [@restaurant, @restaurant_review] do |f|%>
+            <%= f.input :title %>
+            <%= f.input :comment %>
+            <%= f.submit %>
+          <% end %>
+        </div>
       </div>
-      <%= simple_form_for [@restaurant, @restaurant_review] do |f|%>
-        <%= f.input :title %>
-        <%= f.input :comment %>
-        <%= f.submit %>
-      <% end %>
     </div>
   </div>
 
