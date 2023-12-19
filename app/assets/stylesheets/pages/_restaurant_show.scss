@@ -6,12 +6,12 @@
   color: #FFFFFF;
   text-decoration: none;
   text-align: center;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   width: 375px;
   padding: 20px 30px;
-  margin-top: 20px;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 b, strong {
@@ -27,28 +27,38 @@ b, strong {
   margin: 0;
 }
 
-.restaurant-show {
-  background-color: #02595A;
-  color: #FFFFFF;
-  text-decoration: none;
-  border-radius: 3px;
-  width: 100%;
-  text-align: left;
-  padding-top: 8px;
-  padding-left: 15px;
-  margin-bottom: 20px;
-  width: 375px;
-}
+// .restaurant-show {
+//   background-color: #02595A;
+//   color: #FFFFFF;
+//   text-decoration: none;
+//   border-radius: 3px;
+//   width: 100%;
+//   text-align: left;
+//   padding-top: 8px;
+//   padding-left: 15px;
+//   margin-bottom: 20px;
+//   width: 375px;
+// }
 
 .restaurant-show-button {
-  display: flex;
-  justify-content: center;
-  background-color: #02595A;
-  color: #FFFFFF;
-  padding: 10px;
-  margin: 20px 100px;
+  // display: flex;
+  // justify-content: center;
+  color: #02595A;
+  background-color: #F2F2F2;
+  padding: 15px 20px;
   text-decoration: none;
   border-radius: 40px;
+  border: 3px solid #02595A;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.button-combo-top-restaurant {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 10px;
+  margin-bottom: 20px;
 }
 
 .mapboxgl-marker .mapboxgl-marker-anchor-center {

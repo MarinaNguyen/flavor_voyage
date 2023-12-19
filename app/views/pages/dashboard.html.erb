@@ -48,10 +48,12 @@
             <% recipe = favorite_recipe.recipe %>
             <div class="card-recipe1">
               <div class="card-recipe">
+                <%= link_to recipe_path(recipe.id) do %>
                 <% if recipe.image_url != nil %>
                 <%= image_tag recipe.image_url, alt: 'Recipe Image', class: "card-image" %>
                 <% else %>
                 <img src="https://source.unsplash.com/random/?recipe" class="card-img-top" alt="image">
+                <% end %>
                 <% end %>
                 <div class="card-name">
                   <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>

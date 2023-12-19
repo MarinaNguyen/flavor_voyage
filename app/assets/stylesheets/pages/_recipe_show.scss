@@ -44,12 +44,40 @@
 }
 
 .recipe-show-button {
-  display: flex;
-  justify-content: center;
-  background-color: #02595A;
-  color: #FFFFFF;
-  padding: 10px;
-  margin: 20px 100px;
+  // display: flex;
+  // justify-content: center;
+  // background-color: #02595A;
+  // color: #FFFFFF;
+  // padding: 10px;
+  // margin: 20px 100px;
+  // text-decoration: none;
+  // border-radius: 40px;
+  color: #02595A;
+  background-color: #F2F2F2;
+  padding: 15px 20px;
   text-decoration: none;
   border-radius: 40px;
+  border: 3px solid #02595A;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.button-combo-top-recipe {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.favorite-button {
+  color: #02595A;
+  background-color: #F2F2F2;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-radius: 40px;
+  border: 3px solid #02595A;
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
 }
