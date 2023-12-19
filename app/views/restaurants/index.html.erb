@@ -8,10 +8,9 @@
   <div class="global-container" >
     <div class="container-radius" data-controller="sticky-container" data-action="scroll@window->sticky-container#updateSticky"> <!--  data-sticky-container-target="sticky" -->
       <%# <p><strong>Sort by</strong></p> %>
-
-
        <div class="col-sm-8 my-3">
           <%= form_with url: restaurants_path, method: :get, class: "d-flex" do %>
+            <i class="fa-solid fa-magnifying-glass" style="color: #02595a;"></i>
             <%= text_field_tag :query,
                   params[:query],
                   class: "form-control",
