@@ -8,10 +8,13 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :restaurants, only: [:index, :show]
+  resources :restaurants, only: [:index, :show] do
+    resources :restaurant_reviews, only: [:create, :destroy]
+  end
   resources :recipes, only: [:index, :show] do
     get 'add', to: 'favorite_recipes#add'
     get 'delete', to: 'favorite_recipes#destroy'
+    resources :recipe_reviews, only: [:create, :destroy]
   end
   get 'dashboard', to: 'pages#dashboard'
   get "choices", to: "pages#choices"

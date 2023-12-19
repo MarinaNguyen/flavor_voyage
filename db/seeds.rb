@@ -18,6 +18,7 @@ Ingredient.destroy_all
 Recipe.destroy_all
 User.destroy_all
 Restaurant.destroy_all
+RestaurantReview.destroy_all
 
 puts "Finished destroying things"
 
@@ -146,3 +147,6 @@ puts "#{Ingredient.count} ingredients created"
 puts "#{User.count} users created"
 puts "#{Restaurant.count} restaurants created"
 puts 'Recipes seeded successfully!'
+
+#reviews
+RestaurantReview.create(title: "good", comment: "really nice restaurant", restaurant_id: 31, user_id: user2)

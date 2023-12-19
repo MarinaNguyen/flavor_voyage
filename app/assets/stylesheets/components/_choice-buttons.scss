@@ -36,3 +36,22 @@
   font-size: 20px;
   box-shadow: rgba(100, 100, 111, 0.5) 0px 6px 5px 0px;
 }
+
+// .cards-front1, .cards-front2, .cards-back1, .cards-back2 {
+//   transition: transform .6s linear;
+// }
+
+// .cards-front1, .cards-front2 {
+//   transform: perspective(600px) rotateY(0deg);
+// }
+
+// .cards-back1, .cards-back2 {
+//   transform: perspective(600px) rotateY(180deg);
+// }
+
+// .cards-recipes.rotated > .cards-front1, .cards-front2 {
+//   transform: perspective(600px) rotateY(180deg);
+// }
+// .cards-restaurants.rotated > .cards-back1, .cards-back2{
+//   transform: perspective(600px) rotateY(0deg);
+// }
