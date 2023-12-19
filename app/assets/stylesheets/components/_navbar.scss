@@ -65,10 +65,27 @@
 .autoComplete_wrapper>input {
   color: #02595A !important;
   border: 0.05rem solid #02595A !important;
-
+  background-image: url("app/assets/images/magnifying-glass-solid.svg") !important;
 }
 
 .autoComplete_wrapper ::placeholder {
   color: #02595A !important;
 /*   border: 0.05rem solid #02595A !important;
  */  }
+
+
+ .fa-magnifying-glass {
+  position: absolute;
+  color: #02595a;
+  z-index: 1;
+  top: 30px;
+  left: 32px;
+  font-size: 20px;
+ }
+
+ #autoComplete_list_1>li {
+  color: #02595A;
+  mark{
+    color: #02595A;
+  }
+ }
