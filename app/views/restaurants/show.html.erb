@@ -51,15 +51,15 @@
 
     <%# reviews  %>
 
-    <div class="restaurants-reviews restaurant-p" data-controller="reviews-restaurant" data-action="click->reviews-restaurant#displayReviews">
-      <div class="icone-p" data-reviews-restaurant-target="container2">
+    <div class="restaurants-reviews restaurant-p" data-controller="reviews-restaurant">
+      <div class="icone-p" data-reviews-restaurant-target="container2" data-action="click->reviews-restaurant#displayReviews">
         <i class="fa-solid fa-plus" data-reviews-restaurant-target="icon2"></i>
         <p><strong>Reviews</strong></p>
       </div>
 
       <div class="reviews-cards d-none" data-reviews-restaurant-target="reviewmenu">
         <% @restaurant_reviews.each do |restaurant_review| %>
-          <div class="reviews-card">
+          <div class="reviews-card mb-3">
             <h4><%= restaurant_review.title %></h4>
             <p><%= restaurant_review.comment %></p>
             <%= link_to restaurant_restaurant_review_path(@restaurant, restaurant_review), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} do %>
@@ -69,9 +69,9 @@
         <% end %>
         <div class="form-reviews">
           <%= simple_form_for [@restaurant, @restaurant_review] do |f|%>
-            <%= f.input :title %>
+            <%= f.input :title  %>
             <%= f.input :comment %>
-            <%= f.submit %>
+            <%= f.submit class:"button-form-reviews" %>
           <% end %>
         </div>
       </div>
