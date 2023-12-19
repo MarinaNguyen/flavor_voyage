@@ -17,8 +17,6 @@
                   placeholder: "Type a keyword",
                   id: "autoComplete",
                   data: {searchable: @restaurants_name}
-
-
               %>
             <%= hidden_field_tag 'country', params[:country] %>
             <%= submit_tag "Search", name: "", class: "search-color" %>
@@ -70,13 +68,38 @@
 
 
 <script>
-      const searchableItems = JSON.parse(document.querySelector('#autoComplete').dataset.searchable);
-      const autoCompleteJs = new autoComplete({
-          data: {
-            src: searchableItems
-          },
-          resultItem: {
-              highlight: true,
-          },
-        })
+      let searchableItems = JSON.parse(document.querySelector('#autoComplete').dataset.searchable);
+        const autoCompleteJS = new autoComplete({
+ selector: "#autoComplete",
+            placeHolder: "Search for Food...",
+            data: {
+                src: searchableItems,
+                cache: true,
+            },
+            resultsList: {
+                element: (list, data) => {
+                    if (!data.results.length) {
+                        // Create "No Results" message element
+                        const message = document.createElement("div");
+                        // Add class to the created element
+                        message.setAttribute("class", "no_result");
+                        // Add message text content
+                        message.innerHTML = `<span>Found No Results for "${data.query}"</span>`;
+                        // Append message element to the results list
+                        list.prepend(message);
+                    }
+                },
+            },
+            resultItem: {
+                highlight: true
+            },
+            events: {
+                input: {
+                    selection: (event) => {
+                        const selection = event.detail.selection.value;
+                        autoCompleteJS.input.value = selection;
+                    }
+                }
+            }
+         });
     </script>
