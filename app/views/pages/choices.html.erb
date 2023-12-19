@@ -2,19 +2,19 @@
   <div class="global-container">
     <div class="container-radius">
 
-      <div data-controller="choice-button">
+      <div data-controller="choice-button cards-flip">
 
         <div id="choice-buttons">
           <div id="recipe-button">
-              <p data-action="click->choice-button#clicked" data-choice-button-target="recipesbutton">Recipes</p>
+              <p data-action="click->choice-button#clicked click->cards-flip#rotation" data-choice-button-target="recipesbutton" data-cards-flip-target="recipescards">Recipes</p>
           </div>
           <div id="restaurant-button">
-              <p data-action="click->choice-button#clicked" data-choice-button-target="restaurantsbutton">Restaurants</p>
+              <p data-action="click->choice-button#clicked click->cards-flip#rotation" data-choice-button-target="restaurantsbutton" data-cards-flip-target="restaurantscards">Restaurants</p>
           </div>
         </div>
 
         <div class="cards-recipes" data-choice-button-target="recipes">
-          <div class="cards-recipes-1">
+          <div class="cards-recipes-1 cards-front1 rotated">
             <% @recipes.first(10).each do |recipe| %>
               <div class="card-recipe1">
                     <div class="card-recipe">
@@ -36,7 +36,7 @@
             <% end %>
           </div>
 
-          <div class="cards-recipes-2">
+          <div class="cards-recipes-2 cards-front2 rotated">
             <% @recipes.last(10).each do |recipe| %>
               <div class="card-recipe2" >
                     <div class="card-recipe">
@@ -60,7 +60,7 @@
 
           <div class="cards-restaurants d-none" data-choice-button-target="restaurants">
 
-            <div class="cards-restaurants-1">
+            <div class="cards-restaurants-1 cards-back1 rotated">
               <% @restaurants.first(10).each do |restaurant| %>
                 <div class="card-restaurant1">
                   <div class="card-restaurant">
@@ -80,7 +80,7 @@
             </div>
 
 
-           <div class="cards-restaurants-2">
+           <div class="cards-restaurants-2 cards-back2 rotated">
               <% @restaurants.last(10).each do |restaurant| %>
                 <div class="card-restaurant2">
                   <div class="card-restaurant">

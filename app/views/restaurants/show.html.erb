@@ -40,10 +40,33 @@
       <p><%= @restaurant.address %></p>
     </div>
 
+    <%# reviews  %>
+
+    <div class="restaurants-reviews restaurant-p">
+      <p><strong>Reviews</strong></p>
+      <div class="reviews-cards">
+        <% @restaurant_reviews.each do |restaurant_review| %>
+          <div class="reviews-card">
+            <h4><%= restaurant_review.title %></h4>
+            <p><%= restaurant_review.comment %></p>
+            <%= link_to restaurant_restaurant_review_path(@restaurant, restaurant_review), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} do %>
+              <i class="fa-solid fa-xmark"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <%= simple_form_for [@restaurant, @restaurant_review] do |f|%>
+        <%= f.input :title %>
+        <%= f.input :comment %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
   <a class="restaurant-show-button" href="/restaurants?country=<%= params[:country] %>">Go to Restaurants</a>
   <a class="restaurant-show-button" href="/choices?country=<%= params[:country] %>">Menu</a>
 
 </div>
+
+
 
 <%= render "shared/background", model: @restaurant %>

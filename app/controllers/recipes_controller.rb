@@ -12,6 +12,8 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
+    @recipe_review = RecipeReview.new
+    @recipe_reviews = @recipe.recipe_reviews
     params[:country] = @recipe.country.capitalize
   end
 end

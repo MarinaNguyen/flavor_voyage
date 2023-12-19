@@ -37,9 +37,31 @@
       </div>
     </div>
 
+    <%# reviews %>
+
+    <div class="recipes-reviews recipe-show">
+      <p><strong>Reviews</strong></p>
+      <div class="reviews-cards">
+        <% @recipe_reviews.each do |recipe_review| %>
+          <div class="reviews-card">
+            <h4><%= recipe_review.title %></h4>
+            <p><%= recipe_review.comment %></p>
+            <%= link_to recipe_recipe_review_path(@recipe, recipe_review), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} do %>
+              <i class="fa-solid fa-xmark"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <%= simple_form_for [@recipe, @recipe_review] do |f|%>
+        <%= f.input :title %>
+        <%= f.input :comment %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
   <%= link_to "Add to favorite", recipe_add_path(@recipe), class: "recipe-show-button" %>
   <a class="recipe-show-button" href="/recipes?country=<%= params[:country] %>">Go to Recipes</a>
   <a class="recipe-show-button" href="/choices?country=<%= params[:country] %>">Menu</a>
+
 </div>
 <%= render "shared/background", model: @recipe %>
