@@ -60,3 +60,15 @@
 .dropdown-item:hover {
   background-color: #02595A;
 }
+
+
+.autoComplete_wrapper>input {
+  color: #02595A !important;
+  border: 0.05rem solid #02595A !important;
+
+}
+
+.autoComplete_wrapper ::placeholder {
+  color: #02595A !important;
+/*   border: 0.05rem solid #02595A !important;
+ */  }

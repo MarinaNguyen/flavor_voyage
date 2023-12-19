@@ -12,8 +12,7 @@ require 'open-uri'
 require "nokogiri"
 # require 'json'
 
-API_URL = "https://api.edamam.com/search?from=0&to=100&app_id=#{ENV['APP_ID']}&app_key=
-#{ENV['APP_KEY']}&q=recipes"
+
 
 Ingredient.destroy_all
 Recipe.destroy_all
@@ -21,11 +20,15 @@ User.destroy_all
 Restaurant.destroy_all
 RestaurantReview.destroy_all
 
+puts "Finished destroying things"
+
+
+puts "Creating users"
 user1 = User.create!(name: "Albert", email: "albert@gmail.com", password: "azerty", phone_number: "0600000000")
 user2 = User.create!(name: "Lou", email: "lou@gmail.com", password: "azerty", phone_number: "06000000000")
 user3 = User.create!(name: "Lila", email: "lila@gmail.com", password: "azerty", phone_number: "06000000000")
 user4 = User.create!(name: "Eric", email: "eric@gmail.com", password: "azerty", phone_number: "07906424648")
-
+puts "Users created"
 # response = URI.open(API_URL).read
 # recipes_data = JSON.parse(response)
 # recipes_data['hits'].first(200).each do |hit|
@@ -41,7 +44,9 @@ user4 = User.create!(name: "Eric", email: "eric@gmail.com", password: "azerty", 
 #       recipe:
 #     )
 #   end
-# end
+#
+
+puts "Creating restaurants"
 
 # France
 Restaurant.create(image_url: "https://img-4.linternaute.com/wE3UZdTethn99-heK4SqMUGjs2I=/fit-in/550x550/ef2dd3e3a3d742abb1fcadc508fd4016/restaurant/11744.jpg", name: "L'Oustau", address: "515 Route DE BAUMANIERE, 13520 Les Baux-de-Provence", phone_number: "04 90 54 33 07", country: "france")
@@ -109,6 +114,7 @@ Restaurant.create(image_url: "https://media-cdn.tripadvisor.com/media/photo-s/19
 Restaurant.create(image_url: "https://media-cdn.tripadvisor.com/media/photo-s/02/73/02/3a/filename-cimg1327-jpg.jpg", name: "Il Bocconcino", address: "Via Ostilia, 23, 00184 Roma RM, Italie", phone_number: "+390677079175", country: "italy")
 Restaurant.create(image_url: "https://media-cdn.tripadvisor.com/media/photo-s/18/d3/e4/c8/photo1jpg.jpg", name: "Il Brigantino", address: "Via di San Martino Ai Monti, 50, 00184 Roma RM, Italie", phone_number: "+39064745074", country: "italy")
 
+puts "Restaurants created"
 # Recipes and Ingredients
 countries = ["france", "spain", "italy"]
 countries.each do |country|
