@@ -54,8 +54,10 @@
           <div class="reviews-card dropdown-item">
             <h4><%= recipe_review.title %></h4>
             <p><%= recipe_review.comment %></p>
+            <% if recipe_review.user == current_user %>
             <%= link_to recipe_recipe_review_path(@recipe, recipe_review), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} do %>
               <i class="fa-solid fa-xmark"></i>
+            <% end %>
             <% end %>
           </div>
         <% end %>

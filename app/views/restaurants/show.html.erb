@@ -62,8 +62,10 @@
           <div class="reviews-card">
             <h4><%= restaurant_review.title %></h4>
             <p><%= restaurant_review.comment %></p>
+            <% if restaurant_review.user == current_user %>
             <%= link_to restaurant_restaurant_review_path(@restaurant, restaurant_review), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} do %>
               <i class="fa-solid fa-xmark"></i>
+            <% end %>
             <% end %>
           </div>
         <% end %>
