@@ -44,14 +44,14 @@
 
     <%# reviews %>
 
-    <div class="recipes-reviews recipe-show">
+    <div class="recipe-show">
       <div class="icone-p" data-element="reviews" data-action="click->reveal-infos#displayCard" data-reveal-infos-target="container4">
         <i class="fa-solid fa-plus" data-element="reviews" data-reveal-infos-target="icon4"></i>
         <p data-element="reviews">Reviews</p>
       </div>
       <div class="d-none reviews-cards" id="reviews">
         <% @recipe_reviews.each do |recipe_review| %>
-          <div class="reviews-card dropdown-item">
+         <div class="reviews-card">
             <h4><%= recipe_review.title %></h4>
             <p><%= recipe_review.comment %></p>
             <% if recipe_review.user == current_user %>
@@ -61,12 +61,12 @@
             <% end %>
           </div>
         <% end %>
-        <div class="form-reviews dropdown-item">
+        <div class="form-reviews">
           <h4>Add a new review</h4>
           <%= simple_form_for [@recipe, @recipe_review] do |f|%>
             <%= f.input :title %>
             <%= f.input :comment %>
-            <%= f.submit %>
+            <%= f.submit class:"button-form-reviews" %>
           <% end %>
         </div>
       </div>
