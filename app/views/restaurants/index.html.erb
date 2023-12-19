@@ -14,7 +14,11 @@
             <%= text_field_tag :query,
                   params[:query],
                   class: "form-control",
-                  placeholder: "Type a keyword"
+                  placeholder: "Type a keyword",
+                  id: "autoComplete",
+                  data: {searchable: @restaurants_name}
+
+
               %>
             <%= hidden_field_tag 'country', params[:country] %>
             <%= submit_tag "Search", name: "", class: "search-color" %>
@@ -63,3 +67,16 @@
   </div>
 
 </div>
+
+
+<script>
+      const searchableItems = JSON.parse(document.querySelector('#autoComplete').dataset.searchable);
+      const autoCompleteJs = new autoComplete({
+          data: {
+            src: searchableItems
+          },
+          resultItem: {
+              highlight: true,
+          },
+        })
+    </script>
