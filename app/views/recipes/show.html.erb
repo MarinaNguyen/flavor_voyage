@@ -3,6 +3,11 @@
   <div class="container-radius recipe-show-display" data-controller="reveal-infos">
   <% @country %>
 
+    <div class="button-combo-top-recipe">
+      <a class="recipe-show-button" href="/choices?country=<%= params[:country] %>">Menu</a>
+      <a class="recipe-show-button" href="/recipes?country=<%= params[:country] %>">Go to Recipes</a>
+    </div>
+
     <div  class= "recipe-show">
       <div class="icone-p" data-element="ingredients" data-action="click->reveal-infos#displayCard" data-reveal-infos-target="container1">
         <i class="fa-solid fa-plus" data-element="ingredients" data-reveal-infos-target="icon1"></i>
@@ -37,9 +42,8 @@
       </div>
     </div>
 
+  <%= link_to "Add to favorite", recipe_add_path(@recipe), class: "favorite-button" %>
   </div>
-  <%= link_to "Add to favorite", recipe_add_path(@recipe), class: "recipe-show-button" %>
-  <a class="recipe-show-button" href="/recipes?country=<%= params[:country] %>">Go to Recipes</a>
-  <a class="recipe-show-button" href="/choices?country=<%= params[:country] %>">Menu</a>
+
 </div>
 <%= render "shared/background", model: @recipe %>
