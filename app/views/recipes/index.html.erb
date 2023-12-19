@@ -17,6 +17,7 @@
             <%= submit_tag "Search", name: "", class: "search-color" %>
           <% end %>
         </div>
+
       <div class="recipes-cards">
         <% @recipes_per_country.each do |recipe| %>
           <% if recipe.id.odd? %>
