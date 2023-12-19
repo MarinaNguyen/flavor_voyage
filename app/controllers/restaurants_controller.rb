@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants_per_country = Restaurant.all.where(country: params[:country]&.downcase)
     @restaurants_name = Restaurant.all.where(country: params[:country]&.downcase).flat_map(&:name)
+    @selected_country = params[:country]&.capitalize
     if params[:query].present?
     sql_subquery = <<~SQL
       restaurants.name @@ :query
