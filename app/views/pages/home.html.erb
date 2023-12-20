@@ -1,21 +1,19 @@
 <div class="container home-content">
   <h1>Flavor Voyage</h1>
   <div class="home-btn-access">
-    <div class="home-button mb-3">
-    <%= form_with url: choices_path(country: params[:country]), data: { country_form_target: "form", controller: "country-form" }, method: :get do |f| %>
-      <%= f.select :country, ["Choose a country", "France", "Spain", "Italy"] %>
-      <% hidden_field_tag countries: params[:country] %>
-    <% end %>
-    </div>
       <% if user_signed_in? %>
-        <%= link_to choices_path do  %>
-          <button class="home-button">Locate me</button>
-        <% end %>
+           <div class="home-button mb-3">
+              <%= form_with url: choices_path(country: params[:country]), data: { country_form_target: "form", controller: "country-form" }, method: :get do |f| %>
+                <%= f.select :country, ["Choose a country", "France", "Spain", "Italy"] %>
+              <% hidden_field_tag countries: params[:country] %>
+            <% end %>
+             </div>
+           <%= link_to "Locate me", "choices?country=France", class: "home-button" %>
         <% else %>
-        <%= link_to new_user_session_path do  %>
-          <button class="home-button">Locate me</button>
+            <%= link_to new_user_session_path do  %>
+              <button class="home-button mb-3">Register</button>
+            <% end %>
+            <button class="home-button">Locate me</button>
         <% end %>
-      <% end %>
-
   </div>
 </div>
