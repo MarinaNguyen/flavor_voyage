@@ -19,7 +19,7 @@ Recipe.destroy_all
 User.destroy_all
 Restaurant.destroy_all
 RestaurantReview.destroy_all
-RecipeReviews.destroy_all
+
 
 puts "Finished destroying things"
 
