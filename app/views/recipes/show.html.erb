@@ -51,7 +51,7 @@
       </div>
       <div class="d-none reviews-cards" id="reviews">
         <% @recipe_reviews.each do |recipe_review| %>
-         <div class="reviews-card">
+         <div class="reviews-card reviews-recipe">
             <h4><%= recipe_review.title %></h4>
             <p><%= recipe_review.comment %></p>
             <% if recipe_review.user == current_user %>
