@@ -5,9 +5,12 @@
   </div>
   <div class="global-container">
     <div class="container-radius">
+        <div class="menu-dash">
+          <a class="recipe-show-button" href="/choices?country=<%= params[:country] %>">Menu</a>
+        </div>
       <div class="button-information-dash">
           <ul>
-          <h3>Information</h3>
+          <p><strong>Information</strong></p>
           <li>Email: <%= @user.email %></li>
           </ul>
       </div>
@@ -15,7 +18,7 @@
                 <div  class= "form-dash" data-controller="form-dashboard">
                   <div class="icone-p" data-action="click->form-dashboard#displayForm" data-form-dashboard-target="container2" >
                     <i class="fa-solid fa-plus" data-form-dashboard-target="icon2"></i>
-                    <h3>Suggestions</h3>
+                    <p><strong>Suggestions</strong></p>
                   </div>
                   <div class="proposed-form d-none" data-form-dashboard-target="form">
                       <p><strong>Propose a Recipe or Restaurant</strong><p>
@@ -38,7 +41,7 @@
 
 
           <div class="favorite-recipes">
-            <h3>Favorite Recipes</h3>
+            <p><strong>Favorite Recipes :</strong></p>
           </div>
 
 
