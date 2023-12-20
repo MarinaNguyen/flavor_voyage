@@ -12,7 +12,8 @@ require 'open-uri'
 require "nokogiri"
 # require 'json'
 
-
+RecipeReview.destroy_all
+RestaurantReview.destroy_all
 FavoriteRecipe.destroy_all
 Ingredient.destroy_all
 Recipe.destroy_all
