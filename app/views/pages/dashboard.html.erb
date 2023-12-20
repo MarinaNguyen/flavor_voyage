@@ -60,9 +60,8 @@
                 <% end %>
                 <div class="card-name">
                   <p><%= link_to recipe.name, recipe_path(recipe.id) %></p>
-                  <%= link_to recipe_delete_path(favorite_recipe.id) do %>
-                    <i class="fa-solid fa-xmark"></i>
-                  <% end %>
+                  <%= link_to "Delete", recipe_delete_path(favorite_recipe.id) %>
+
                 </div>
               </div>
             </div>
