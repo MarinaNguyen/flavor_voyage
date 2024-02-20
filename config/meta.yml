@@ -1,0 +1,9 @@
+meta_product_name: "Flavor Voyage"
+
+meta_title: "Flavor Voyage – Explore the world gastronomies"
+
+meta_description: "Explore different countries even if your not traveling"
+
+meta_image: "cover.png" # should exist in `app/assets/images/`
+
+twitter_account: "@product_twitter_account" # required for Twitter Cards
